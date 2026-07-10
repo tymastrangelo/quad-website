@@ -4,18 +4,18 @@ const COLUMNS = [
   {
     heading: "Product",
     links: [
-      { label: "The app", href: "#app" },
-      { label: "For clubs", href: "#clubs" },
-      { label: "FAQ", href: "#faq" },
-      { label: "Download", href: "#download" },
+      { label: "The app", href: "/#app" },
+      { label: "For clubs", href: "/#clubs" },
+      { label: "FAQ", href: "/#faq" },
+      { label: "Download", href: "/#download" },
     ],
   },
   {
     heading: "Support",
     links: [
-      { label: "Feedback (in the app)", href: "#faq" },
-      { label: "Privacy policy", href: "#" },
-      { label: "Terms of service", href: "#" },
+      { label: "Feedback (in the app)", href: "/#faq" },
+      { label: "Privacy policy", href: "/privacy" },
+      { label: "Terms of service", href: "/terms" },
     ],
   },
 ];

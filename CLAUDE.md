@@ -9,10 +9,12 @@ Next.js 16 (App Router) · TypeScript · Tailwind CSS v4 · shadcn/ui (radix-ui 
 - `npx tsc --noEmit`: typecheck
 - `npm run build`: production build (all routes prerender static; treat a non-static route as a regression)
 - The user owns deploys and any future git history. Don't init git, commit, or deploy unless asked.
+- All `*.md` files are gitignored except READMEs (same policy as the app repo). CLAUDE.md, DESIGN_GUIDE.md, AGENTS.md, privacy.md, and terms.md are local only; never suggest committing them.
 
 ## Structure
 - `app/layout.tsx`: fonts + metadata. `metadataBase` is unset until there's a real domain (harmless build warning).
 - `app/page.tsx`: assembles the sections in order; each section is one file in `components/site/`.
+- `app/privacy/page.tsx` + `app/terms/page.tsx`: legal pages built on the shared primitives in `components/site/legal.tsx`. Their content is transcribed from the app's legal screens; `privacy.md` and `terms.md` at repo root are the source dumps (React Native screen code) Tyler exports from the app. When he updates those files, re-sync the pages. Legal text is transcribed faithfully (it keeps words like RSVP because the policy describes backend data); only em dashes get converted to commas.
 - `components/site/`: Navbar, Hero (3D phone lift), Ticker, Showcase, FeatureGrid, ForClubs, Steps, Faq, Cta, Footer, plus shared bits (PinMark/QuadWordmark, Reveal, SectionHeading, PhoneFrame, StoreBadges).
 - `components/ui/`: shadcn components (add more via `npx shadcn@latest add <name>`; `components.json` is configured).
 - `public/quad-screenshot.png`: the real app screenshot inside PhoneFrame. To update it, drop a new iPhone screenshot (1179×2556) in `assets/images/quad/` and copy it over.
@@ -38,4 +40,4 @@ Next.js 16 (App Router) · TypeScript · Tailwind CSS v4 · shadcn/ui (radix-ui 
 - **Google Play is coming soon.** The Play badge is a button that pops a "Coming soon" bubble (see `StoreBadges`), not a link. The App Store badge is a normal link (`#` until the listing is live). Both badges use the official store artwork in `public/badge-app-store.svg` and `public/badge-google-play.svg`; never recreate them by hand.
 - Canonical campus coordinates: `36.1036° N · 79.5043° W` (hero eyebrow + footer). Don't reintroduce older values.
 - Legal/copyright name is **Quad Connect** (footer: "© 2026 Quad Connect. All rights reserved."). Keep "Not affiliated with Elon University."
-- Store badge links and privacy/terms links are `#` placeholders until real URLs exist.
+- Store badge links are `#` placeholders until the listings exist. Privacy and terms live at `/privacy` and `/terms`, linked from the footer. Nav/footer anchor links use the `/#section` form so they work from subpages.
