@@ -216,7 +216,7 @@ Pill, `gold/15` fill, gold mono text 10px uppercase ("IN 45 MIN").
 `white/6` + blur + `white/10` border, radius 16px, width 224 to 256px, shadow 2xl. Contents follow the app's notification anatomy: source line (mono, tiny), title (600), meta (muted).
 
 ### Store badges
-The official black badge artwork, both at ~52px height (they share a 3.375:1 ratio). The App Store badge is a link; the Google Play badge is a button that pops a gold mono "COMING SOON" bubble above itself for ~2.4s until the listing is live.
+The official black badge artwork, both at ~52px height (they share a 3.375:1 ratio). Until a listing is live, its badge is a button that pops a gold mono "COMING SOON" bubble above itself for ~2.4s; once live, it becomes a plain link. Both are currently coming soon.
 
 ### Nav
 Floating pill, `night/70` + heavy blur, hairline border, height 56px, max width 896px, 16px from top. Logo left, links center (hidden on mobile), primary button right.

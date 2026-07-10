@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Check } from "lucide-react";
 import { Reveal } from "./reveal";
 
@@ -12,9 +13,13 @@ function ClubDashboardMock() {
   return (
     <div className="w-full max-w-sm rounded-3xl border border-white/10 bg-night/60 p-5 shadow-2xl backdrop-blur-sm">
       <div className="flex items-center gap-3">
-        <span className="flex h-11 w-11 items-center justify-center rounded-full bg-pin font-display text-sm font-bold text-white">
-          CS
-        </span>
+        <Image
+          src="/club-soccer.jpg"
+          alt=""
+          width={44}
+          height={44}
+          className="h-11 w-11 rounded-full object-cover"
+        />
         <div>
           <p className="font-semibold">Club Soccer</p>
           <p className="text-xs text-muted-foreground">
