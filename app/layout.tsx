@@ -11,11 +11,11 @@ const spaceMono = Space_Mono({
 export const metadata: Metadata = {
   title: "Quad | Campus happens here",
   description:
-    "Quad is the home for everything happening at Elon University: every event, every club, one personalized feed. Free for students with an @elon.edu email.",
+    "Quad puts Elon's club events in one feed and on a live campus map. See what's happening now, say you're going in one tap. Free for students with an @elon.edu email.",
   openGraph: {
     title: "Quad | Campus happens here",
     description:
-      "Every event, every club, everything happening at Elon, in one app built for your campus.",
+      "Elon's club events in one feed and on a live campus map, built for students.",
     type: "website",
     images: ["/quad-icon.png"],
   },

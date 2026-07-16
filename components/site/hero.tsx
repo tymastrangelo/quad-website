@@ -58,10 +58,21 @@ export function Hero() {
         aria-hidden
         className="absolute inset-0 bg-[radial-gradient(rgba(246,239,233,0.09)_1px,transparent_1px)] bg-size-[26px_26px] mask-radial-from-5% mask-radial-to-70% mask-radial-at-top"
       />
-      {/* maroon glow rising behind the phone */}
+      {/* pin ripple: concentric rings radiating from where the phone stands,
+          like a dropped pin pinging on the campus map */}
       <div
         aria-hidden
-        className="absolute bottom-[-10%] left-1/2 h-[700px] w-[1100px] -translate-x-1/2 rounded-full bg-[radial-gradient(closest-side,rgba(115,0,10,0.75),rgba(232,50,63,0.12),transparent)] blur-2xl"
+        className="absolute inset-x-0 bottom-0 h-[85%] bg-[repeating-radial-gradient(circle_at_50%_100%,rgba(232,50,63,0.22)_0px,rgba(232,50,63,0.22)_1px,transparent_1px,transparent_110px)] [mask-image:radial-gradient(ellipse_60%_90%_at_50%_100%,black,transparent_78%)]"
+      />
+      {/* low horizon glow grounding the phone, not a floating orb */}
+      <div
+        aria-hidden
+        className="absolute inset-x-0 bottom-0 h-[55%] bg-[radial-gradient(ellipse_55%_75%_at_50%_100%,rgba(115,0,10,0.6),rgba(61,4,16,0.25)_55%,transparent_75%)]"
+      />
+      {/* settle back to night before the ticker so the section seam is invisible */}
+      <div
+        aria-hidden
+        className="absolute inset-x-0 bottom-0 h-44 bg-linear-to-t from-night to-transparent"
       />
 
       <div className="relative mx-auto flex max-w-6xl flex-col items-center px-6 pt-36 text-center md:pt-44">
@@ -77,15 +88,36 @@ export function Hero() {
           {...enterProps(reduceMotion, 0.08)}
           className="font-display mt-6 max-w-4xl text-6xl font-bold tracking-tight text-balance md:text-8xl"
         >
-          Campus happens <span className="text-pin">here.</span>
+          Campus happens{" "}
+          <span className="whitespace-nowrap text-pin">
+            here
+            <motion.span
+              className="inline-block"
+              {...(reduceMotion
+                ? {}
+                : {
+                    initial: { opacity: 0, y: "-0.5em" },
+                    animate: { opacity: 1, y: 0 },
+                    transition: {
+                      delay: 0.55,
+                      type: "spring",
+                      stiffness: 420,
+                      damping: 17,
+                    },
+                  })}
+            >
+              <PinMark className="ml-1 inline-block h-[0.62em] w-[0.62em] align-baseline" />
+            </motion.span>
+          </span>
         </motion.h1>
 
         <motion.p
           {...enterProps(reduceMotion, 0.16)}
           className="mt-6 max-w-xl text-lg text-pretty text-muted-foreground md:text-xl"
         >
-          Quad is the home for everything happening at Elon: every event,
-          every club, one feed built around you.
+          One feed and a live campus map for what Elon&apos;s clubs are up
+          to. See what&apos;s on tonight, tap &quot;I&apos;m going&quot;, and
+          bring your friends along.
         </motion.p>
 
         <motion.div
@@ -114,9 +146,9 @@ export function Hero() {
 
         <motion.p
           {...enterProps(reduceMotion, 0.32)}
-          className="mt-5 font-mono text-[11px] tracking-[0.18em] text-paper/40 uppercase"
+          className="mt-5 text-sm text-paper/45"
         >
-          Free for students · @elon.edu required
+          Free for students. Sign in with your @elon.edu email.
         </motion.p>
 
         {/* ── the phone lift ── */}

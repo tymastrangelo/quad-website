@@ -115,7 +115,7 @@ const FEATURES = [
     vignette: <LiveVignette />,
   },
   {
-    title: "Every event, on the map",
+    title: "Pinned where it happens",
     body: "Events pinned across a live campus map, with what's near you highlighted and walking directions one tap away. Never wander Moseley looking for the room again.",
     vignette: <MapVignette />,
   },

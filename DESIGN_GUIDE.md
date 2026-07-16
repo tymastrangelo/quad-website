@@ -73,7 +73,7 @@ When Quad UI appears on light backgrounds (the app itself, or the mock cards on 
 2. **Pin red means "act" or "now."** Buttons, live dots, going states, selected states. Never use it for decorative fills or long text.
 3. **Gold means "label."** Eyebrows, icons, tiny chips (like "IN 45 MIN"). If gold ever covers more than a chip, it is wrong.
 4. **Maroon means "brand atmosphere."** Gradients, glows, panels, selection highlight. It reads as depth, not as an action.
-5. Backgrounds glow, they do not band: use radial gradients of maroon into night (`radial-gradient(closest-side, rgba(115,0,10,0.75), rgba(232,50,63,0.12), transparent)`), then blur.
+5. Backgrounds glow from the ground, not as floating orbs: anchor maroon radial gradients to the bottom edge like a horizon (`radial-gradient(ellipse 55% 75% at 50% 100%, rgba(115,0,10,0.6), rgba(61,4,16,0.25) 55%, transparent 75%)`). Pair with structure, not blur: the hero layers faint concentric pin-red rings (`repeating-radial-gradient`, 1px stroke every 110px, ~0.22 alpha, radially masked) over the same center, so the light reads as a pin's ping rippling across the map.
 6. Never introduce cool grays. Every neutral is warmed toward the maroon family (note `#B39A9D`, `#241318`).
 
 ### Translating to the app
@@ -235,6 +235,8 @@ Protect these; they are what makes Quad's site memorable:
 3. **The ticker.** A slightly rotated (−1.2°) full-bleed marquee of real campus happenings on a maroon gradient strip, mono uppercase, pin marks as separators.
 4. **The glowing pin.** Giant pin mark at 7% opacity behind the final CTA, inside a maroon radial glow.
 5. **Light-on-dark vignettes.** Wherever the app's UI is depicted, it stays light, like a phone screen glowing against the night page.
+6. **The pin period.** The hero headline ends "Campus happens here" with the pin mark as the sentence's period (0.62em, baseline aligned), dropping in with a spring after the headline enters. The pin is the punctuation because dropping a pin is the product.
+7. **The pin ripple.** Concentric 1px pin-red rings radiating from behind the phone (bottom center of the hero) over the map-dot grid, with a low maroon horizon glow grounding the phone. No blurred orb gradients. The glow always fades back to night before the section ends (a bottom `linear-gradient` to `night`), so no hard seam shows against the tilted ticker.
 
 ---
 
