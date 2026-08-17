@@ -30,7 +30,7 @@ export default function TermsPage() {
     <LegalPage
       title="Quad Terms of Service"
       effective="June 16, 2026"
-      updated="June 16, 2026"
+      updated="August 17, 2026"
     >
       <div className="flex flex-col gap-4">
         <P>
@@ -217,9 +217,10 @@ export default function TermsPage() {
 
       <LegalSection title="11. Termination and Account Deletion">
         <P>
-          You may delete your account at any time from within the App;
-          deletion is permanent and irreversible, as described in our
-          Privacy Policy. We may suspend or terminate your access at any
+          You may delete your account yourself at any time, without
+          contacting us, from Settings &rarr; Delete Account inside the App.
+          Deletion takes effect immediately and is permanent and
+          irreversible, as described in our Privacy Policy. We may suspend or terminate your access at any
           time, with or without notice, for any violation of these Terms,
           our community standards, university policy, or applicable law, or
           to protect the App, our users, or third parties. Sections of

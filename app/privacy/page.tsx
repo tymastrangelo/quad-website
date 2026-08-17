@@ -22,7 +22,7 @@ export default function PrivacyPage() {
     <LegalPage
       title="Quad Connect Privacy Policy"
       effective="June 22, 2026"
-      updated="June 22, 2026"
+      updated="August 17, 2026"
     >
       <div className="flex flex-col gap-4">
         <P>
@@ -506,9 +506,11 @@ export default function PrivacyPage() {
             the profile settings screen.
           </li>
           <li>
-            You may delete your account directly within the App at any
-            time. Account deletion permanently removes your profile and
-            associated data as described in Section 9, and is irreversible.
+            You may delete your account yourself at any time from Settings
+            &rarr; Delete Account inside the App. No request to us and no
+            contact with us is required. Deletion runs immediately,
+            permanently removes your profile and associated data as
+            described in Section 9, and is irreversible.
           </li>
         </UL>
 
@@ -547,8 +549,10 @@ export default function PrivacyPage() {
           the address in Section 1. On request, we can provide an export of
           your account data in a common machine readable format (such as
           CSV or JSON). We will respond within five (5) business days and
-          may need to verify your identity before fulfilling a request.
-          In-app account deletion is the fastest way to delete your data.
+          may need to verify your identity before fulfilling a request. You
+          do not need to contact us to delete your account: the in-app
+          control at Settings &rarr; Delete Account does this immediately and
+          is the fastest way to delete your data.
         </P>
 
         <Sub>11.5 California Residents</Sub>
