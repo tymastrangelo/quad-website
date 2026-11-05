@@ -20,7 +20,10 @@ export function Navbar({
   const links = campus.key === "onby" ? [...LINKS, { href: "#find", label: "Your school" }] : LINKS;
   return (
     <header className="fixed inset-x-0 top-4 z-50 px-4">
-      <nav className="mx-auto grid h-14 max-w-4xl grid-cols-[1fr_auto_1fr] items-center rounded-full border border-line bg-[var(--nav-glass)] pr-2 pl-5 shadow-soft backdrop-blur-xl">
+      <nav
+        className="mx-auto grid h-14 max-w-4xl items-center rounded-full border border-line bg-[var(--nav-glass)] pr-2 pl-5 shadow-soft backdrop-blur-xl"
+        style={{ gridTemplateColumns: "1fr auto 1fr" }}
+      >
         <div className="flex justify-start">
           <CampusMenu campus={campus} onSelect={onSelect} />
         </div>
