@@ -5,6 +5,7 @@ import { CAMPUSES, campusFromPath, type CampusKey } from "@/lib/campus";
 import { Cta } from "./cta";
 import { Faq } from "./faq";
 import { FeatureGrid } from "./feature-grid";
+import { FindSchool } from "./find-school";
 import { Footer } from "./footer";
 import { ForOrgs } from "./for-orgs";
 import { Hero } from "./hero";
@@ -52,6 +53,7 @@ export function Landing({ initial }: { initial: CampusKey }) {
         <FeatureGrid campus={campus} />
         <ForOrgs campus={campus} />
         <Steps campus={campus} />
+        {campus.key === "onby" && <FindSchool />}
         <Faq campus={campus} />
         <Cta campus={campus} />
       </main>

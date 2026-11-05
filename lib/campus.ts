@@ -109,7 +109,7 @@ const onby: Campus = {
     ],
     pilotEyebrow: "One campus at a time",
     pilotBody:
-      "onby launches one campus at a time, starting spring 2027. If you want it at yours, write to the address in the footer and tell me what your students use today.",
+      "onby launches one campus at a time, starting spring 2027. Search for your school below; if it is not there yet, leave your school email and I will reach out.",
     mock: {
       initials: "RC",
       name: "Run Club",
@@ -129,7 +129,7 @@ const onby: Campus = {
     follow: "Every org in onby is public, so follow anything that catches your eye. Each follow teaches your For You feed what matters.",
   },
   faq: [
-    { q: "Which campuses is onby on?", a: "onby launches one campus at a time, starting spring 2027. If you want it at yours, write to the address in the footer and tell me what your students use today." },
+    { q: "Which campuses is onby on?", a: "onby launches one campus at a time, starting spring 2027. Search for your school in the section above. If it is not there yet, leave your school email and I will reach out about bringing it there." },
     { q: "Who can use it?", a: "Students at a campus onby runs on, with their school email. Signup is verified on the server, so each community stays genuinely its own." },
     { q: "Does it cost anything?", a: "No. onby is free for students. No ads, no premium tier, no catch." },
     { q: "Does onby replace what my school already uses?", a: "No. Your school's events system stays the place where orgs register, post events and take registrations. onby only does the finding: it reads the public events orgs already posted, never writes anything back, and every event links back." },

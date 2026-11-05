@@ -13,10 +13,13 @@ export function PhoneFrame({
   screens,
   active,
   className,
+  overlay,
 }: {
   screens: Screen[];
   active: string;
   className?: string;
+  /** Rendered over the screen, under the island (the hero dims it while the phone lies back). */
+  overlay?: React.ReactNode;
 }) {
   return (
     <div className={cn("relative w-[300px] select-none", className)}>
@@ -37,6 +40,7 @@ export function PhoneFrame({
               )}
             />
           ))}
+          {overlay}
           {/* dynamic island */}
           <div className="absolute top-2.5 left-1/2 h-[22px] w-[78px] -translate-x-1/2 rounded-full bg-black" />
         </div>

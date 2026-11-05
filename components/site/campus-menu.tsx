@@ -1,15 +1,20 @@
 "use client";
 
 import { useEffect, useId, useRef, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { Check, ChevronDown } from "lucide-react";
 import { CAMPUSES, type Campus, type CampusKey } from "@/lib/campus";
 import { cn } from "@/lib/utils";
 import { OnbyWordmark } from "./brand-mark";
 
-const ITEMS: { key: CampusKey; label: string; sub: string; dot: string }[] = [
-  { key: "onby", label: "onby", sub: "For any campus", dot: "#2b5cff" },
-  { key: "elon", label: "onby for Elon", sub: "Elon University", dot: "#73000a" },
+/* Icons: the onby app icon, and Elon's own mark (its site touch icon,
+   assets/images/elon/). Elon's mark is a university trademark; the
+   proposal says Elon logos appear only where Elon approves, so swap in a
+   plain maroon dot if that approval is ever in doubt. */
+const ITEMS: { key: CampusKey; label: string; sub: string; icon: string; alt: string }[] = [
+  { key: "onby", label: "onby", sub: "For any campus", icon: "/onby-icon.png", alt: "" },
+  { key: "elon", label: "onby for Elon", sub: "Elon University", icon: "/elon-mark.png", alt: "" },
 ];
 
 /* The wordmark in the nav opens a small menu: the app for any campus, or
@@ -114,10 +119,15 @@ export function CampusMenu({
                 active && "bg-surface-2/70",
               )}
             >
-              <span
-                aria-hidden="true"
-                className="size-2.5 shrink-0 rounded-full"
-                style={{ background: item.dot }}
+              <Image
+                src={item.icon}
+                alt={item.alt}
+                width={32}
+                height={32}
+                className={cn(
+                  "size-8 shrink-0 object-contain",
+                  item.key === "onby" && "rounded-[9px] shadow-soft",
+                )}
               />
               <span className="min-w-0 flex-1">
                 <span className="block text-sm font-semibold text-ink">{item.label}</span>
