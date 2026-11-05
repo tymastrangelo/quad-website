@@ -97,7 +97,7 @@ export function Hero({ campus }: { campus: Campus }) {
   const { next, live, saved } = campus.cards;
 
   return (
-    <section ref={section} className="relative overflow-hidden">
+    <section ref={section} data-hero className="relative overflow-hidden">
       {/* map-dot atmosphere */}
       <div
         aria-hidden
@@ -122,7 +122,7 @@ export function Hero({ campus }: { campus: Campus }) {
         className="absolute inset-x-0 bottom-0 h-44 bg-linear-to-t from-canvas to-transparent"
       />
 
-      <div className="relative mx-auto flex max-w-6xl flex-col items-center px-6 pt-36 text-center md:pt-44">
+      <div className="relative mx-auto flex max-w-6xl flex-col items-center px-6 pt-28 text-center md:pt-44">
         <motion.div
           style={{ y: headY, opacity: headOpacity }}
           className="flex flex-col items-center"
@@ -133,7 +133,7 @@ export function Hero({ campus }: { campus: Campus }) {
 
           <motion.h1
             {...enterProps(0.08)}
-            className="font-display mt-6 max-w-4xl text-[2.9rem] leading-[1.02] font-extrabold tracking-tight text-balance sm:text-6xl md:text-[5.5rem]"
+            className="font-display mt-5 max-w-4xl text-[2.75rem] leading-[1.02] font-extrabold tracking-tight text-balance sm:text-6xl md:mt-6 md:text-[5.5rem]"
           >
             Everything happening on{" "}
             <span className="whitespace-nowrap">
@@ -156,26 +156,27 @@ export function Hero({ campus }: { campus: Campus }) {
 
           <motion.p
             {...enterProps(0.14)}
-            className="font-display mt-4 text-2xl font-extrabold tracking-tight text-brand md:text-3xl"
+            className="font-display mt-3 text-2xl font-extrabold tracking-tight text-brand md:mt-4 md:text-3xl"
           >
             Come on by.
           </motion.p>
 
           <motion.p
             {...enterProps(0.2)}
-            className="mt-5 max-w-xl text-lg text-pretty text-ink-soft md:text-xl"
+            className="mt-4 max-w-xl text-base text-pretty text-ink-soft sm:text-lg md:mt-5 md:text-xl"
           >
             {campus.lead}
           </motion.p>
 
           <motion.div
             {...enterProps(0.26)}
-            className="mt-9 flex flex-wrap items-center justify-center gap-3"
+            data-hero-cta
+            className="mt-7 flex w-full flex-col items-center gap-3 sm:w-auto sm:flex-row sm:flex-wrap sm:justify-center md:mt-9"
           >
             <Button
               asChild
               size="lg"
-              className="h-12 rounded-full bg-brand px-7 text-base font-semibold text-white transition-transform hover:bg-brand-deep active:scale-[0.97]"
+              className="h-13 w-full rounded-full bg-brand px-7 text-base font-semibold text-white transition-transform hover:bg-brand-deep active:scale-[0.97] sm:h-12 sm:w-auto"
             >
               <a href="#download">Get the app</a>
             </Button>
@@ -183,16 +184,23 @@ export function Hero({ campus }: { campus: Campus }) {
               asChild
               size="lg"
               variant="outline"
-              className="h-12 rounded-full border-line bg-surface px-7 text-base font-medium text-ink shadow-soft transition-transform hover:bg-surface-2 hover:text-ink active:scale-[0.97]"
+              className="hidden h-12 rounded-full border-line bg-surface px-7 text-base font-medium text-ink shadow-soft transition-transform hover:bg-surface-2 hover:text-ink active:scale-[0.97] sm:inline-flex"
             >
               <a href="#app">
                 See what&apos;s inside
                 <ArrowRight data-slot="icon" />
               </a>
             </Button>
+            <a
+              href="#app"
+              className="inline-flex items-center gap-1.5 py-2 text-sm font-semibold text-brand sm:hidden"
+            >
+              See what&apos;s inside
+              <ArrowRight className="size-4" aria-hidden="true" />
+            </a>
           </motion.div>
 
-          <motion.p {...enterProps(0.32)} className="mt-5 text-sm text-ink-soft">
+          <motion.p {...enterProps(0.32)} className="mt-3 text-xs text-ink-soft sm:mt-5 sm:text-sm">
             {campus.signIn}
           </motion.p>
         </motion.div>
@@ -202,7 +210,7 @@ export function Hero({ campus }: { campus: Campus }) {
           ref={phoneArea}
           onPointerMove={onPointerMove}
           onPointerLeave={onPointerLeave}
-          className="relative mt-16 flex w-full justify-center pb-10 md:mt-20"
+          className="relative mt-10 flex w-full justify-center pb-6 md:mt-20 md:pb-10"
           style={{ perspective: 1300 }}
         >
           <motion.div
@@ -214,7 +222,7 @@ export function Hero({ campus }: { campus: Campus }) {
               <PhoneFrame
                 screens={SCREENS}
                 active={campus.key}
-                className="w-[290px] md:w-[340px]"
+                className="w-[min(80vw,300px)] md:w-[340px]"
                 overlay={
                   <motion.div
                     aria-hidden
@@ -224,6 +232,24 @@ export function Hero({ campus }: { campus: Campus }) {
                 }
               />
             </motion.div>
+          </motion.div>
+
+          {/* on phones: one notification lands on the phone, like a push arriving */}
+          <motion.div
+            style={{ y: driftSlow, opacity: cardIn }}
+            className="absolute top-[18%] left-1/2 w-[min(86vw,320px)] -translate-x-1/2 lg:hidden"
+          >
+            <div className="flex items-start gap-3 rounded-2xl border border-coral/40 bg-[var(--glass)] p-3.5 text-left shadow-lift backdrop-blur-md">
+              <span className="relative mt-1.5 flex h-2 w-2 shrink-0">
+                <span className="animate-ping-slow absolute inline-flex h-full w-full rounded-full bg-coral" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-coral" />
+              </span>
+              <div className="min-w-0">
+                <p className="text-[10px] font-semibold tracking-[0.12em] text-coral uppercase">{live.label}</p>
+                <p className="truncate text-sm font-semibold">{live.title}</p>
+                <p className="truncate text-xs text-ink-soft">{live.meta}</p>
+              </div>
+            </div>
           </motion.div>
 
           {/* floating notifications, hidden on small screens */}

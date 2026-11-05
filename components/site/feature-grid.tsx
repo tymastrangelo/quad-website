@@ -46,23 +46,23 @@ export function FeatureGrid({ campus }: { campus: Campus }) {
     return item;
   });
   return (
-    <section className="relative mx-auto max-w-6xl px-6 pb-28 md:pb-36">
+    <section className="relative mx-auto max-w-6xl px-6 pb-20 md:pb-36">
       <SectionHeading
         eyebrow="And everything else"
         title="The details students actually feel"
         sub="onby is fast, quiet and respectful of your attention, because it was built by a student who uses it every day."
       />
-      <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-10 grid grid-cols-2 gap-3 sm:gap-4 md:mt-14 lg:grid-cols-3">
         {items.map((item, i) => (
           <Reveal key={item.title} delay={(i % 3) * 0.08}>
-            <div className="group h-full rounded-[22px] border border-line bg-surface p-6 shadow-soft transition-[border-color,transform] duration-300 hover:-translate-y-0.5 hover:border-brand/40">
+            <div className="group h-full rounded-[22px] border border-line bg-surface p-4 shadow-soft transition-[border-color,transform] duration-300 hover:-translate-y-0.5 hover:border-brand/40 sm:p-6">
               <span className="inline-flex size-10 items-center justify-center rounded-xl bg-brand-soft text-brand">
                 <item.icon className="h-5 w-5" aria-hidden="true" />
               </span>
-              <h3 className="font-display mt-4 text-lg font-extrabold tracking-tight">
+              <h3 className="font-display mt-3 text-[15px] leading-tight font-extrabold tracking-tight sm:mt-4 sm:text-lg">
                 {item.title}
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-ink-soft">
+              <p className="mt-1.5 text-xs leading-relaxed text-ink-soft sm:mt-2 sm:text-sm">
                 {item.body}
               </p>
             </div>

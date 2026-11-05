@@ -14,9 +14,9 @@ export function Cta({ campus }: { campus: Campus }) {
         aria-hidden
         className="absolute top-1/2 left-1/2 size-[420px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-coral opacity-[0.07]"
       />
-      <Reveal className="relative mx-auto flex max-w-4xl flex-col items-center px-6 py-32 text-center md:py-44">
+      <Reveal className="relative mx-auto flex max-w-4xl flex-col items-center px-6 py-24 text-center md:py-44">
         <p className="eyebrow">{campus.cta.eyebrow}</p>
-        <h2 className="font-display mt-6 text-5xl font-extrabold tracking-tight text-balance md:text-7xl">
+        <h2 className="font-display mt-5 text-[2.75rem] font-extrabold tracking-tight text-balance sm:text-5xl md:mt-6 md:text-7xl">
           Come on by<span className="text-coral">.</span>
         </h2>
         <p className="mt-5 max-w-md text-pretty text-ink-soft md:text-lg">

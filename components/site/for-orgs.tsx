@@ -57,7 +57,7 @@ export function ForOrgs({ campus }: { campus: Campus }) {
         aria-hidden
         className="absolute inset-0 bg-[radial-gradient(var(--dot-grid)_1px,transparent_1px)] bg-size-[26px_26px] opacity-60 [mask-image:radial-gradient(ellipse_70%_80%_at_80%_50%,black,transparent)]"
       />
-      <div className="relative mx-auto grid max-w-6xl items-center gap-14 px-6 py-28 md:py-36 lg:grid-cols-2">
+      <div className="relative mx-auto grid max-w-6xl items-center gap-10 px-6 py-20 md:py-36 lg:grid-cols-2 lg:gap-14">
         <Reveal className="flex flex-col gap-5">
           <p className="eyebrow">For organizations</p>
           <h2 className="font-display text-4xl font-extrabold tracking-tight text-balance md:text-5xl">
@@ -79,7 +79,7 @@ export function ForOrgs({ campus }: { campus: Campus }) {
             <p className="mt-2 text-sm leading-relaxed text-ink/85">{orgs.pilotBody}</p>
           </div>
         </Reveal>
-        <Reveal delay={0.15} className="flex justify-center lg:justify-end">
+        <Reveal delay={0.15} className="order-first flex justify-center lg:order-none lg:justify-end">
           <OrgPageMock campus={campus} />
         </Reveal>
       </div>

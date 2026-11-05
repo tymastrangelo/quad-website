@@ -13,19 +13,21 @@ export function Steps({ campus }: { campus: Campus }) {
     },
   ];
   return (
-    <section className="mx-auto max-w-6xl px-6 py-28 md:py-36">
+    <section className="mx-auto max-w-6xl px-6 py-20 md:py-36">
       <SectionHeading eyebrow="Getting in" title="Three steps to plugged in" />
-      <div className="mt-16 grid gap-10 md:grid-cols-3">
+      <div className="mt-10 grid gap-8 md:mt-16 md:grid-cols-3 md:gap-10">
         {STEPS.map((step, i) => (
           <Reveal key={step.number} delay={i * 0.12}>
-            <div className="flex flex-col gap-4 border-t border-line pt-6">
-              <span className="numerals text-sm font-extrabold text-brand">
+            <div className="flex gap-4 md:flex-col md:gap-4 md:border-t md:border-line md:pt-6">
+              <span className="numerals flex size-9 shrink-0 items-center justify-center rounded-full bg-brand-soft text-sm font-extrabold text-brand md:size-auto md:bg-transparent">
                 {step.number}
               </span>
-              <h3 className="font-display text-2xl font-extrabold tracking-tight">
-                {step.title}
-              </h3>
-              <p className="text-sm leading-relaxed text-ink-soft">{step.body}</p>
+              <div className="flex flex-col gap-2 md:gap-4">
+                <h3 className="font-display text-xl font-extrabold tracking-tight md:text-2xl">
+                  {step.title}
+                </h3>
+                <p className="text-sm leading-relaxed text-ink-soft">{step.body}</p>
+              </div>
             </div>
           </Reveal>
         ))}

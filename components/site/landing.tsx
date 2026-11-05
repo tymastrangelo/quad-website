@@ -11,6 +11,7 @@ import { ForOrgs } from "./for-orgs";
 import { Hero } from "./hero";
 import { Navbar } from "./navbar";
 import { Showcase } from "./showcase";
+import { StickyCta } from "./sticky-cta";
 import { Steps } from "./steps";
 import { Ticker } from "./ticker";
 
@@ -58,6 +59,7 @@ export function Landing({ initial }: { initial: CampusKey }) {
         <Cta campus={campus} />
       </main>
       <Footer campus={campus} />
+      <StickyCta campus={campus} />
     </div>
   );
 }

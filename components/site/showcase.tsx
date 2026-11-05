@@ -119,15 +119,18 @@ export function Showcase({ campus }: { campus: Campus }) {
     <MapVignette key="map" campus={campus} />,
   ];
   return (
-    <section id="app" className="relative mx-auto max-w-6xl scroll-mt-24 px-6 py-28 md:py-36">
+    <section id="app" className="relative mx-auto max-w-6xl scroll-mt-24 px-6 py-20 md:py-36">
       <SectionHeading
         eyebrow="Inside the app"
         title="Never miss what matters"
         sub={campus.showcase.sub}
       />
-      <div className="mt-16 grid gap-6 lg:grid-cols-3">
+      <p className="mt-3 text-center text-xs font-semibold tracking-[0.12em] text-ink-soft uppercase lg:hidden">
+        Swipe
+      </p>
+      <div className="-mx-6 mt-6 flex snap-x snap-mandatory gap-4 overflow-x-auto px-6 pb-4 [scrollbar-width:none] lg:mx-0 lg:mt-16 lg:grid lg:grid-cols-3 lg:gap-6 lg:overflow-visible lg:px-0 lg:pb-0 [&::-webkit-scrollbar]:hidden">
         {TITLES.map((title, i) => (
-          <Reveal key={title} delay={i * 0.12}>
+          <Reveal key={title} delay={i * 0.12} className="w-[84vw] max-w-sm shrink-0 snap-center lg:w-auto lg:max-w-none">
             <article className="group h-full overflow-hidden rounded-[28px] border border-line bg-surface shadow-soft transition-[border-color,transform] duration-300 hover:-translate-y-1 hover:border-brand/40">
               {vignettes[i]}
               <div className="border-t border-line p-7">

@@ -128,7 +128,7 @@ export function FindSchool() {
   };
 
   return (
-    <section id="find" className="mx-auto max-w-3xl scroll-mt-24 px-6 pb-28 md:pb-36">
+    <section id="find" className="mx-auto max-w-3xl scroll-mt-24 px-6 pb-20 md:pb-36">
       <SectionHeading
         eyebrow="Your school"
         title="Is onby at your school yet?"

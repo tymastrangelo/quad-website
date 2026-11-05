@@ -10,13 +10,13 @@ import { SectionHeading } from "./section-heading";
 
 export function Faq({ campus }: { campus: Campus }) {
   return (
-    <section id="faq" className="mx-auto max-w-3xl scroll-mt-24 px-6 pb-28 md:pb-36">
+    <section id="faq" className="mx-auto max-w-3xl scroll-mt-24 px-6 pb-20 md:pb-36">
       <SectionHeading eyebrow="Questions" title="Asked and answered" />
       <Reveal delay={0.1}>
         <Accordion
           type="single"
           collapsible
-          className="mt-12 rounded-[28px] border border-line bg-surface px-6 shadow-soft"
+          className="mt-8 rounded-[28px] border border-line bg-surface px-5 shadow-soft md:mt-12 md:px-6"
         >
           {campus.faq.map((faq) => (
             <AccordionItem key={faq.q} value={faq.q}>
