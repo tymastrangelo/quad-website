@@ -74,7 +74,7 @@ export function CampusMenu({
       >
         <OnbyWordmark />
         {campus.navSuffix && (
-          <span className="text-sm font-semibold text-brand">{campus.navSuffix}</span>
+          <span className="text-sm font-semibold whitespace-nowrap text-brand">{campus.navSuffix}</span>
         )}
         <ChevronDown
           className={cn(
