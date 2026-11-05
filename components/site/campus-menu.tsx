@@ -70,7 +70,7 @@ export function CampusMenu({
         aria-expanded={open}
         aria-controls={menuId}
         onClick={() => setOpen((v) => !v)}
-        className="flex items-center gap-1.5 rounded-full py-1 pr-1 outline-none focus-visible:ring-2 focus-visible:ring-brand/50"
+        className="flex items-baseline gap-1.5 rounded-full py-1 pr-1 outline-none focus-visible:ring-2 focus-visible:ring-brand/50"
       >
         <OnbyWordmark />
         {campus.navSuffix && (
@@ -78,7 +78,7 @@ export function CampusMenu({
         )}
         <ChevronDown
           className={cn(
-            "size-4 text-ink-soft transition-transform duration-300",
+            "size-4 self-center text-ink-soft transition-transform duration-300",
             open && "rotate-180",
           )}
           aria-hidden="true"
