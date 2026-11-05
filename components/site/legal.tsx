@@ -1,3 +1,4 @@
+import { CAMPUSES } from "@/lib/campus";
 import { Footer } from "./footer";
 import { Navbar } from "./navbar";
 
@@ -13,8 +14,8 @@ export function LegalPage({
   children: React.ReactNode;
 }) {
   return (
-    <>
-      <Navbar />
+    <div data-campus="onby">
+      <Navbar campus={CAMPUSES.onby} />
       <main className="mx-auto max-w-3xl px-6 pt-36 pb-24">
         <p className="eyebrow">Legal</p>
         <h1 className="font-display mt-4 text-4xl font-extrabold tracking-tight text-balance md:text-5xl">
@@ -25,8 +26,8 @@ export function LegalPage({
         </p>
         <div className="mt-12 flex flex-col gap-10">{children}</div>
       </main>
-      <Footer />
-    </>
+      <Footer campus={CAMPUSES.onby} />
+    </div>
   );
 }
 
@@ -65,7 +66,7 @@ export function B({ children }: { children: React.ReactNode }) {
 
 export function UL({ children }: { children: React.ReactNode }) {
   return (
-    <ul className="flex list-disc flex-col gap-2 pl-5 text-sm leading-relaxed text-ink-soft marker:text-cobalt md:text-[15px]">
+    <ul className="flex list-disc flex-col gap-2 pl-5 text-sm leading-relaxed text-ink-soft marker:text-brand md:text-[15px]">
       {children}
     </ul>
   );
@@ -73,7 +74,7 @@ export function UL({ children }: { children: React.ReactNode }) {
 
 export function Callout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="rounded-r-xl border-l-2 border-cobalt bg-cobalt-soft/60 px-5 py-4 text-sm leading-relaxed text-ink/85 md:text-[15px]">
+    <div className="rounded-r-xl border-l-2 border-brand bg-brand-soft/60 px-5 py-4 text-sm leading-relaxed text-ink/85 md:text-[15px]">
       {children}
     </div>
   );
@@ -83,7 +84,7 @@ export function Mail() {
   return (
     <a
       href="mailto:tmastrangelo@elon.edu"
-      className="font-medium text-cobalt hover:underline"
+      className="font-medium text-brand hover:underline"
     >
       tmastrangelo@elon.edu
     </a>

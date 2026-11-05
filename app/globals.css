@@ -2,7 +2,7 @@
 @import "tw-animate-css";
 
 /* ── onby brand tokens ──────────────────────────────────────────────
-   Warm canvas, white surfaces, one cobalt accent and the coral dot
+   Warm canvas, white surfaces, one brand accent and the coral dot
    from the mark. Light first; dark follows the system. Values mirror
    the app's lib/palette.ts so the site and the app read as one thing. */
 :root {
@@ -12,9 +12,9 @@
   --ink: #1c1c1e;
   --ink-soft: #5c5c63;
   --line: #e8e4dc;
-  --cobalt: #2b5cff;
-  --cobalt-deep: #1f46d6;
-  --cobalt-soft: #e9eeff;
+  --brand: #2b5cff;
+  --brand-deep: #1f46d6;
+  --brand-soft: #e9eeff;
   --coral: #ff6a5c;
   --coral-soft: #ffece9;
   --glow: rgba(43, 92, 255, 0.18);
@@ -32,22 +32,39 @@
   --card-foreground: var(--ink);
   --popover: var(--surface);
   --popover-foreground: var(--ink);
-  --primary: var(--cobalt);
+  --primary: var(--brand);
   --primary-foreground: #ffffff;
   --secondary: var(--surface-2);
   --secondary-foreground: var(--ink);
   --muted: var(--surface-2);
   --muted-foreground: var(--ink-soft);
-  --accent: var(--cobalt-soft);
+  --accent: var(--brand-soft);
   --accent-foreground: var(--ink);
   --destructive: var(--coral);
   --border: var(--line);
   --input: var(--line);
-  --ring: var(--cobalt);
+  --ring: var(--brand);
   --radius: 0.875rem;
 }
 
+/* onby for Elon: the interactive accent becomes the school's color, the
+   way the app swaps its tint per school. Scoped to the campus wrapper so
+   the switch can animate in place. Values come from schools.accent_*. */
+[data-campus="elon"] {
+  --brand: #73000a;
+  --brand-deep: #5a0008;
+  --brand-soft: #f5e6e7;
+  --glow: rgba(115, 0, 10, 0.16);
+}
+
 @media (prefers-color-scheme: dark) {
+  [data-campus="elon"] {
+    --brand: #e2475b;
+    --brand-deep: #ea6a7b;
+    --brand-soft: rgba(226, 71, 91, 0.16);
+    --glow: rgba(226, 71, 91, 0.2);
+  }
+
   :root {
     --canvas: #000000;
     --surface: #1c1c1e;
@@ -55,9 +72,9 @@
     --ink: #f5f5f7;
     --ink-soft: #a1a1a6;
     --line: rgba(255, 255, 255, 0.1);
-    --cobalt: #5e82ff;
-    --cobalt-deep: #7a98ff;
-    --cobalt-soft: rgba(94, 130, 255, 0.16);
+    --brand: #5e82ff;
+    --brand-deep: #7a98ff;
+    --brand-soft: rgba(94, 130, 255, 0.16);
     --coral: #ff6a5c;
     --coral-soft: rgba(255, 106, 92, 0.16);
     --glow: rgba(94, 130, 255, 0.22);
@@ -97,9 +114,9 @@
   --color-ink: var(--ink);
   --color-ink-soft: var(--ink-soft);
   --color-line: var(--line);
-  --color-cobalt: var(--cobalt);
-  --color-cobalt-deep: var(--cobalt-deep);
-  --color-cobalt-soft: var(--cobalt-soft);
+  --color-brand: var(--brand);
+  --color-brand-deep: var(--brand-deep);
+  --color-brand-soft: var(--brand-soft);
   --color-coral: var(--coral);
   --color-coral-soft: var(--coral-soft);
 
@@ -174,13 +191,22 @@
   }
 
   ::selection {
-    background-color: var(--cobalt-soft);
+    background-color: var(--brand-soft);
     color: var(--ink);
   }
 
   :focus-visible {
-    outline: 2px solid var(--cobalt);
+    outline: 2px solid var(--brand);
     outline-offset: 3px;
+  }
+
+  /* When the campus toggles, every brand-colored thing glides to the new
+     accent instead of snapping. Only color channels, never transforms. */
+  [data-campus-ready] *,
+  [data-campus-ready] {
+    transition-property: color, background-color, border-color, box-shadow, fill;
+    transition-duration: 550ms;
+    transition-timing-function: cubic-bezier(0.21, 0.47, 0.32, 0.98);
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -195,13 +221,13 @@
   }
 }
 
-/* Section label: small caps in cobalt, the deck's eyebrow. */
+/* Section label: small caps in brand, the deck's eyebrow. */
 @utility eyebrow {
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--cobalt);
+  color: var(--brand);
 }
 
 /* Rounded numerals and stats, like the app. */
@@ -220,3 +246,4 @@
   opacity: 0.035;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.6'/%3E%3C/svg%3E");
 }
+

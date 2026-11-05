@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 
 function PrivacyLink() {
   return (
-    <Link href="/privacy" className="font-medium text-cobalt hover:underline">
+    <Link href="/privacy" className="font-medium text-brand hover:underline">
       Privacy Policy
     </Link>
   );

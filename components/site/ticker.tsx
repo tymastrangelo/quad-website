@@ -1,23 +1,10 @@
+import type { Campus } from "@/lib/campus";
 import { Dot } from "./brand-mark";
 
-/* Real orgs, plausible happenings. No counts, no claims. */
-const HAPPENINGS = [
-  "Hack night with Elon Society of Computing",
-  "Open mic night at Oak House",
-  "Club Swimming open swim at Beck Pool",
-  "ElonRUNS sunrise run from Moseley",
-  "Astronomy Club star party",
-  "Elon Cooking Club dumpling night",
-  "Phoenix Phanatics tailgate",
-  "Yarn Arts stitch circle",
-  "Italian Club film night",
-  "Community Garden workday",
-];
-
-function Row() {
+function Row({ items }: { items: string[] }) {
   return (
     <>
-      {HAPPENINGS.map((item) => (
+      {items.map((item) => (
         <span key={item} className="flex items-center gap-6">
           <span className="whitespace-nowrap">{item}</span>
           <Dot className="size-1.5 shrink-0" />
@@ -27,17 +14,17 @@ function Row() {
   );
 }
 
-export function Ticker() {
+export function Ticker({ campus }: { campus: Campus }) {
   return (
     <section
       aria-label="Happening on campus"
-      className="relative -mx-4 -rotate-[1.2deg] border-y border-cobalt/15 bg-cobalt-soft py-3.5"
+      className="relative -mx-4 -rotate-[1.2deg] border-y border-brand/15 bg-brand-soft py-3.5"
     >
       <div className="flex overflow-hidden hover:[&>div]:[animation-play-state:paused]">
-        <div className="animate-marquee flex w-max items-center gap-6 pr-6 text-xs font-semibold tracking-[0.12em] text-cobalt uppercase">
-          <Row />
+        <div className="animate-marquee flex w-max items-center gap-6 pr-6 text-xs font-semibold tracking-[0.12em] text-brand uppercase">
+          <Row items={campus.ticker} />
           <span aria-hidden="true" className="flex items-center gap-6">
-            <Row />
+            <Row items={campus.ticker} />
           </span>
         </div>
       </div>

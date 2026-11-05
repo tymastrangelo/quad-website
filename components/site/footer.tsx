@@ -1,4 +1,5 @@
 import Image from "next/image";
+import type { Campus } from "@/lib/campus";
 import { OnbyWordmark } from "./brand-mark";
 
 const COLUMNS = [
@@ -21,7 +22,8 @@ const COLUMNS = [
   },
 ];
 
-export function Footer() {
+export function Footer({ campus }: { campus: Campus }) {
+  const home = campus.path === "/" ? "" : campus.path;
   return (
     <footer className="border-t border-line bg-surface">
       <div className="mx-auto flex max-w-6xl flex-col gap-12 px-6 py-16 md:flex-row md:justify-between">
@@ -36,14 +38,8 @@ export function Footer() {
             />
             <OnbyWordmark />
           </div>
-          <p className="text-sm text-ink-soft">
-            Everything happening on campus. Come on by. Built at Elon, by a
-            student, for students.
-          </p>
-          <p className="text-xs text-ink-soft/80">
-            onby is read only. Events come from PhoenixCONNECT and link back
-            to it.
-          </p>
+          <p className="text-sm text-ink-soft">{campus.footer.blurb}</p>
+          <p className="text-xs text-ink-soft/80">{campus.footer.note}</p>
         </div>
         <div className="flex gap-16">
           {COLUMNS.map((col) => (
@@ -52,7 +48,7 @@ export function Footer() {
               {col.links.map((link) => (
                 <a
                   key={link.label}
-                  href={link.href}
+                  href={link.href.startsWith("/#") ? `${home}${link.href.slice(1)}` : link.href}
                   className="text-sm text-ink-soft transition-colors hover:text-ink"
                 >
                   {link.label}
