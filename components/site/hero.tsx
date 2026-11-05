@@ -28,16 +28,22 @@ export function Hero({ campus }: { campus: Campus }) {
   const area = useRef<HTMLDivElement>(null);
   const tiltX = useSpring(useMotionValue(0), SPRING);
   const tiltY = useSpring(useMotionValue(0), SPRING);
+  const shiftX = useSpring(useMotionValue(0), SPRING);
 
+  // Follows the cursor across the phone's column: up to 18° of turn and 24px of travel.
   const onPointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
     if (off || e.pointerType !== "mouse") return;
     const r = e.currentTarget.getBoundingClientRect();
-    tiltY.set(((e.clientX - r.left) / r.width - 0.5) * 10);
-    tiltX.set(-((e.clientY - r.top) / r.height - 0.5) * 6);
+    const px = (e.clientX - r.left) / r.width - 0.5;
+    const py = (e.clientY - r.top) / r.height - 0.5;
+    tiltY.set(px * 36);
+    tiltX.set(-py * 10);
+    shiftX.set(px * 48);
   };
   const onPointerLeave = () => {
     tiltX.set(0);
     tiltY.set(0);
+    shiftX.set(0);
   };
 
   return (
@@ -81,7 +87,7 @@ export function Hero({ campus }: { campus: Campus }) {
           className="flex justify-center md:justify-end"
           style={{ perspective: 1200 }}
         >
-          <motion.div style={{ rotateX: tiltX, rotateY: tiltY, transformStyle: "preserve-3d" }}>
+          <motion.div style={{ rotateX: tiltX, rotateY: tiltY, x: shiftX, transformStyle: "preserve-3d" }}>
             <PhoneFrame screens={SCREENS} active={campus.key} className="w-[min(76vw,300px)] md:w-[340px]" />
           </motion.div>
         </motion.div>
