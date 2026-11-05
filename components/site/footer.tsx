@@ -61,7 +61,7 @@ export function Footer({ campus }: { campus: Campus }) {
       <div className="border-t border-line">
         <div className="mx-auto flex max-w-6xl flex-col gap-2 px-6 py-6 text-xs text-ink-soft md:flex-row md:justify-between">
           <p>© 2026 Quad Software LLC. All rights reserved.</p>
-          <p>Not affiliated with Elon University.</p>
+          <p>{campus.footer.affiliation}</p>
         </div>
       </div>
     </footer>

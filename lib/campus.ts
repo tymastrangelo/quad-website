@@ -41,7 +41,7 @@ export type Campus = {
   steps: { signIn: { title: string; body: string }; follow: string };
   faq: { q: string; a: string }[];
   cta: { eyebrow: string; body: string; fine: string };
-  footer: { blurb: string; note: string };
+  footer: { blurb: string; note: string; affiliation: string };
 };
 
 const onby: Campus = {
@@ -50,11 +50,11 @@ const onby: Campus = {
   toggle: "onby",
   title: "onby | Everything happening on campus",
   description:
-    "onby puts your campus's events and organizations in one feed built around you. Save what you want to catch, get a nudge before it starts, and come on by. Starting at Elon University, spring 2027.",
+    "onby puts your campus's events and organizations in one feed built around you. Save what you want to catch, get a nudge before it starts, and come on by. One campus at a time, starting spring 2027.",
   screenshot: "/screens/onby-home.png",
   screenshotAlt:
     "The onby Home tab: a live event happening now, what's up next for you, and today's events from the orgs you follow",
-  eyebrow: "Any campus · Elon University first, spring 2027",
+  eyebrow: "Any campus · Coming spring 2027",
   lead:
     "Your campus's events and orgs in one feed built around you. Save what you want to catch, get a nudge before it starts, and stop hearing “wait, that was tonight?”",
   signIn: "Free for students. Sign in with your school email.",
@@ -109,7 +109,7 @@ const onby: Campus = {
     ],
     pilotEyebrow: "One campus at a time",
     pilotBody:
-      "onby starts at Elon University in spring 2027 and grows from there. If you want it at your campus, write to tmastrangelo@elon.edu and tell me what your students use today.",
+      "onby launches one campus at a time, starting spring 2027. If you want it at yours, write to the address in the footer and tell me what your students use today.",
     mock: {
       initials: "RC",
       name: "Run Club",
@@ -129,23 +129,24 @@ const onby: Campus = {
     follow: "Every org in onby is public, so follow anything that catches your eye. Each follow teaches your For You feed what matters.",
   },
   faq: [
-    { q: "Which campuses is onby on?", a: "Elon University first, starting spring 2027. onby runs one campus at a time and grows from there. If you want it at yours, email tmastrangelo@elon.edu." },
+    { q: "Which campuses is onby on?", a: "onby launches one campus at a time, starting spring 2027. If you want it at yours, write to the address in the footer and tell me what your students use today." },
     { q: "Who can use it?", a: "Students at a campus onby runs on, with their school email. Signup is verified on the server, so each community stays genuinely its own." },
     { q: "Does it cost anything?", a: "No. onby is free for students. No ads, no premium tier, no catch." },
     { q: "Does onby replace what my school already uses?", a: "No. Your school's events system stays the place where orgs register, post events and take registrations. onby only does the finding: it reads the public events orgs already posted, never writes anything back, and every event links back." },
     { q: "How does my organization get on onby?", a: "There is nothing to set up. If your org posts public events in your school's system and your campus is on onby, they show up on their own. onby does not take event submissions, and it does not ask orgs to post twice." },
     { q: "Will it blow up my notifications?", a: "Only if you want it to. Every notification type has its own toggle, quiet hours are enforced on the server, event reminders only fire for events you saved, and the daily digest is opt in." },
     { q: "What about my privacy?", a: "onby receives only public event and organization information. No rosters, no memberships, no attendance. What you save stays in onby. You can block people and delete your account, along with everything it knows about you, from inside the app." },
-    { q: "Where can I get it?", a: "onby comes to the App Store and Google Play for the spring 2027 start at Elon. Check back here." },
+    { q: "Where can I get it?", a: "onby comes to the App Store and Google Play when your campus launches, starting spring 2027. Check back here." },
   ],
   cta: {
     eyebrow: "Free · iOS & Android · your school email",
     body: "Everything happening on your campus, in your pocket. Get onby and never hear “wait, that was tonight?” again.",
-    fine: "Spring 2027 · Elon University first",
+    fine: "Spring 2027 · One campus at a time",
   },
   footer: {
-    blurb: "Everything happening on campus. Come on by. Built at Elon, by a student, for students.",
+    blurb: "Everything happening on campus. Come on by. Built by a student, for students.",
     note: "onby is read only. Events come from the system your campus already uses and link back to it.",
+    affiliation: "Not affiliated with any university.",
   },
 };
 
@@ -254,6 +255,7 @@ const elon: Campus = {
   footer: {
     blurb: "Everything happening at Elon. Come on by. Built on campus, by a student, for students.",
     note: "onby is read only. Events come from PhoenixCONNECT and link back to it.",
+    affiliation: "Not affiliated with Elon University.",
   },
 };
 
