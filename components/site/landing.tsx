@@ -4,7 +4,6 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { CAMPUSES, campusFromPath, type CampusKey } from "@/lib/campus";
 import { Cta } from "./cta";
 import { Faq } from "./faq";
-import { FeatureGrid } from "./feature-grid";
 import { FindSchool } from "./find-school";
 import { Footer } from "./footer";
 import { ForOrgs } from "./for-orgs";
@@ -13,7 +12,6 @@ import { Navbar } from "./navbar";
 import { Showcase } from "./showcase";
 import { StickyCta } from "./sticky-cta";
 import { Steps } from "./steps";
-import { Ticker } from "./ticker";
 
 /* One page, two campuses. The toggle swaps copy and screenshot in place
    and moves the URL between / and /elon with pushState, so the DOM
@@ -49,9 +47,7 @@ export function Landing({ initial }: { initial: CampusKey }) {
       <Navbar campus={campus} onSelect={select} />
       <main>
         <Hero campus={campus} />
-        <Ticker campus={campus} />
         <Showcase campus={campus} />
-        <FeatureGrid campus={campus} />
         <ForOrgs campus={campus} />
         <Steps campus={campus} />
         {campus.key === "onby" && <FindSchool />}

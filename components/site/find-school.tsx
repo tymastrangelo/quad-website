@@ -128,14 +128,13 @@ export function FindSchool() {
   };
 
   return (
-    <section id="find" className="mx-auto max-w-3xl scroll-mt-24 px-6 pb-20 md:pb-36">
+    <section id="find" className="mx-auto max-w-6xl scroll-mt-24 px-6 py-20 md:py-32">
       <SectionHeading
-        eyebrow="Your school"
         title="Is onby at your school yet?"
-        sub="Search for your campus and pick it from the list. If it's not there yet, leave your school email and I'll reach out about bringing it there."
+        sub="Search for your campus and pick it from the list. If it's not there yet, leave your school email and I'll get in touch."
       />
       <Reveal delay={0.1}>
-        <div ref={root} className="relative mt-10 rounded-[28px] border border-line bg-surface p-3 shadow-soft">
+        <div ref={root} className="relative mt-8 max-w-2xl rounded-[28px] border border-line bg-surface p-3 shadow-soft">
           {/* the search */}
           <div
             className={cn(

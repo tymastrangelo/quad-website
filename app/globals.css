@@ -253,29 +253,10 @@ body.paper .hero-dots {
   display: none;
 }
 
-/* Section label: small caps in brand, the deck's eyebrow. */
-@utility eyebrow {
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--brand);
-}
-
 /* Rounded numerals and stats, like the app. */
 @utility numerals {
   font-family: var(--font-display);
   font-variant-numeric: tabular-nums;
 }
 
-/* A whisper of grain so the warm canvas never reads as flat vector. */
-.grain::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: 60;
-  pointer-events: none;
-  opacity: 0.035;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.6'/%3E%3C/svg%3E");
-}
 

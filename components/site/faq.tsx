@@ -1,35 +1,25 @@
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
 import type { Campus } from "@/lib/campus";
 import { Reveal } from "./reveal";
-import { SectionHeading } from "./section-heading";
 
+/* Questions and answers, all visible. Nothing to click. */
 export function Faq({ campus }: { campus: Campus }) {
   return (
-    <section id="faq" className="mx-auto max-w-3xl scroll-mt-24 px-6 pb-20 md:pb-36">
-      <SectionHeading eyebrow="Questions" title="Asked and answered" />
-      <Reveal delay={0.1}>
-        <Accordion
-          type="single"
-          collapsible
-          className="mt-8 rounded-[28px] border border-line bg-surface px-5 shadow-soft md:mt-12 md:px-6"
-        >
-          {campus.faq.map((faq) => (
-            <AccordionItem key={faq.q} value={faq.q}>
-              <AccordionTrigger className="text-left font-display text-base font-extrabold tracking-tight hover:no-underline md:text-lg">
-                {faq.q}
-              </AccordionTrigger>
-              <AccordionContent className="text-sm leading-relaxed text-ink-soft md:text-base">
-                {faq.a}
-              </AccordionContent>
-            </AccordionItem>
-          ))}
-        </Accordion>
-      </Reveal>
+    <section id="faq" className="mx-auto max-w-6xl scroll-mt-24 px-6 py-20 md:py-32">
+      <div className="grid gap-8 md:grid-cols-[1fr_2fr] md:gap-16">
+        <Reveal>
+          <h2 className="font-display text-3xl font-extrabold tracking-tight md:text-5xl">Questions</h2>
+        </Reveal>
+        <Reveal delay={0.08}>
+          <dl className="flex flex-col divide-y divide-line">
+            {campus.faq.map((item) => (
+              <div key={item.q} className="py-5">
+                <dt className="font-display text-lg font-extrabold tracking-tight md:text-xl">{item.q}</dt>
+                <dd className="mt-2 text-base leading-relaxed text-ink-soft">{item.a}</dd>
+              </div>
+            ))}
+          </dl>
+        </Reveal>
+      </div>
     </section>
   );
 }

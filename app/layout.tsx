@@ -38,7 +38,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${nunito.variable} h-full`}>
-      <body className="grain paper min-h-full font-sans">
+      <body className="paper min-h-full font-sans">
         <MotionProvider>{children}</MotionProvider>
       </body>
     </html>

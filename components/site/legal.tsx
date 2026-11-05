@@ -17,11 +17,11 @@ export function LegalPage({
     <div data-campus="onby">
       <Navbar campus={CAMPUSES.onby} />
       <main className="mx-auto max-w-3xl px-6 pt-36 pb-24">
-        <p className="eyebrow">Legal</p>
+        <p className="text-sm font-medium text-ink-soft">Legal</p>
         <h1 className="font-display mt-4 text-4xl font-extrabold tracking-tight text-balance md:text-5xl">
           {title}
         </h1>
-        <p className="mt-4 text-xs font-semibold tracking-[0.12em] text-ink-soft uppercase">
+        <p className="mt-4 text-sm text-ink-soft">
           Effective {effective} · Last updated {updated}
         </p>
         <div className="mt-12 flex flex-col gap-10">{children}</div>

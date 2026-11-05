@@ -1,36 +1,20 @@
 import { cn } from "@/lib/utils";
 import { Reveal } from "./reveal";
 
+/* Left-aligned, sentence case, no label above it. */
 export function SectionHeading({
-  eyebrow,
   title,
   sub,
   className,
-  align = "center",
 }: {
-  eyebrow: string;
   title: React.ReactNode;
   sub?: string;
   className?: string;
-  align?: "center" | "left";
 }) {
   return (
-    <Reveal
-      className={cn(
-        "flex flex-col gap-4",
-        align === "center" && "items-center text-center",
-        className,
-      )}
-    >
-      <p className="eyebrow">{eyebrow}</p>
-      <h2 className="font-display max-w-2xl text-4xl font-extrabold tracking-tight text-balance md:text-5xl">
-        {title}
-      </h2>
-      {sub && (
-        <p className="max-w-xl text-base text-pretty text-ink-soft md:text-lg">
-          {sub}
-        </p>
-      )}
+    <Reveal className={cn("flex max-w-2xl flex-col gap-3", className)}>
+      <h2 className="font-display text-3xl font-extrabold tracking-tight text-balance md:text-5xl">{title}</h2>
+      {sub && <p className="text-base text-pretty text-ink-soft md:text-lg">{sub}</p>}
     </Reveal>
   );
 }

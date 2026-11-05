@@ -44,7 +44,7 @@ export function Footer({ campus }: { campus: Campus }) {
         <div className="flex gap-16">
           {COLUMNS.map((col) => (
             <nav key={col.heading} aria-label={col.heading} className="flex flex-col gap-3">
-              <p className="eyebrow">{col.heading}</p>
+              <p className="text-sm font-semibold text-ink">{col.heading}</p>
               {col.links.map((link) => (
                 <a
                   key={link.label}
