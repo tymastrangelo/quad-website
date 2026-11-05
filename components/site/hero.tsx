@@ -42,8 +42,8 @@ export function Hero({ campus }: { campus: Campus }) {
 
   return (
     <section data-hero className="overflow-hidden">
-      <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 pt-28 pb-8 md:grid-cols-[1.15fr_0.85fr] md:gap-8 md:pt-40 md:pb-24">
-        <div className="flex max-w-xl flex-col items-start text-left">
+      <div className="mx-auto grid max-w-6xl items-start gap-12 px-6 pt-28 pb-8 md:grid-cols-[1.15fr_0.85fr] md:gap-8 md:pt-32 md:pb-20">
+        <div className="flex max-w-xl flex-col items-start text-left md:pt-8">
           <motion.p {...enter(0)} className="text-sm font-medium text-ink-soft">
             {campus.where}
           </motion.p>
