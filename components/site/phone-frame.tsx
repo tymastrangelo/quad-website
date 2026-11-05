@@ -22,7 +22,7 @@ export function PhoneFrame({
   overlay?: React.ReactNode;
 }) {
   return (
-    <div className={cn("relative w-[300px] select-none", className)}>
+    <div className={cn("relative w-[300px] select-none", className)} onContextMenu={(e) => e.preventDefault()} draggable={false}>
       <div className="rounded-[3.2rem] border border-[var(--phone-rim)] bg-[var(--phone-bezel)] p-[9px] shadow-[0_24px_48px_-16px_rgba(28,28,30,0.35),0_2px_6px_rgba(28,28,30,0.12)]">
         <div className="relative aspect-1206/2622 overflow-hidden rounded-[2.6rem] bg-black">
           {screens.map((screen) => (
@@ -34,8 +34,10 @@ export function PhoneFrame({
               sizes="(max-width: 768px) 290px, 340px"
               priority={screen.key === active}
               aria-hidden={screen.key !== active}
+              draggable={false}
+              onContextMenu={(e) => e.preventDefault()}
               className={cn(
-                "object-cover transition-opacity duration-500 ease-out",
+                "pointer-events-none object-cover transition-opacity duration-500 ease-out select-none",
                 screen.key === active ? "opacity-100" : "opacity-0",
               )}
             />
