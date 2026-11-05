@@ -64,7 +64,7 @@ export function Hero({ campus }: { campus: Campus }) {
       {/* map-dot atmosphere */}
       <div
         aria-hidden
-        className="absolute inset-0 bg-[radial-gradient(var(--dot-grid)_1px,transparent_1px)] bg-size-[26px_26px] mask-radial-from-5% mask-radial-to-70% mask-radial-at-top"
+        className="hero-dots absolute inset-0 bg-[radial-gradient(var(--dot-grid)_1px,transparent_1px)] bg-size-[26px_26px] mask-radial-from-5% mask-radial-to-70% mask-radial-at-top"
       />
       {/* the dot's ripple: concentric rings radiating from where the
           phone stands, like a ping across the campus */}
