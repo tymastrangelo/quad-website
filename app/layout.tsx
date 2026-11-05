@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Nunito } from "next/font/google";
+import { MotionProvider } from "@/components/site/motion-provider";
 import "./globals.css";
 
 // Web fallback for the app's rounded display face (SF Pro Rounded on Apple).
@@ -37,7 +38,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${nunito.variable} h-full`}>
-      <body className="grain min-h-full font-sans">{children}</body>
+      <body className="grain min-h-full font-sans">
+        <MotionProvider>{children}</MotionProvider>
+      </body>
     </html>
   );
 }

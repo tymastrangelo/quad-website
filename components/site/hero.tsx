@@ -12,18 +12,18 @@ import { ArrowRight, Bookmark } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { PhoneFrame } from "./phone-frame";
 
-function enterProps(reduceMotion: boolean, delay: number) {
-  return reduceMotion
-    ? {}
-    : {
-        initial: { opacity: 0, y: 28 },
-        animate: { opacity: 1, y: 0 },
-        transition: {
-          duration: 0.8,
-          delay,
-          ease: [0.21, 0.47, 0.32, 0.98] as const,
-        },
-      };
+/* Same props on the server and the client; MotionProvider handles
+   reduced motion, so these never cause a hydration mismatch. */
+function enterProps(delay: number) {
+  return {
+    initial: { opacity: 0, y: 28 },
+    animate: { opacity: 1, y: 0 },
+    transition: {
+      duration: 0.8,
+      delay,
+      ease: [0.21, 0.47, 0.32, 0.98] as const,
+    },
+  };
 }
 
 export function Hero() {
@@ -76,14 +76,14 @@ export function Hero() {
 
       <div className="relative mx-auto flex max-w-6xl flex-col items-center px-6 pt-36 text-center md:pt-44">
         <motion.p
-          {...enterProps(reduceMotion, 0)}
+          {...enterProps(0)}
           className="eyebrow flex items-center gap-2"
         >
           Elon University · Spring 2027
         </motion.p>
 
         <motion.h1
-          {...enterProps(reduceMotion, 0.08)}
+          {...enterProps(0.08)}
           className="font-display mt-6 max-w-4xl text-[2.9rem] leading-[1.02] font-extrabold tracking-tight text-balance sm:text-6xl md:text-[5.5rem]"
         >
           Everything happening on{" "}
@@ -91,18 +91,14 @@ export function Hero() {
             campus
             <motion.span
               className="inline-block"
-              {...(reduceMotion
-                ? {}
-                : {
-                    initial: { opacity: 0, y: "-0.5em" },
-                    animate: { opacity: 1, y: 0 },
-                    transition: {
-                      delay: 0.55,
-                      type: "spring",
-                      stiffness: 420,
-                      damping: 17,
-                    },
-                  })}
+              initial={{ opacity: 0, y: "-0.5em" }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                delay: 0.55,
+                type: "spring",
+                stiffness: 420,
+                damping: 17,
+              }}
             >
               <span className="text-coral">.</span>
             </motion.span>
@@ -110,14 +106,14 @@ export function Hero() {
         </motion.h1>
 
         <motion.p
-          {...enterProps(reduceMotion, 0.14)}
+          {...enterProps(0.14)}
           className="font-display mt-4 text-2xl font-extrabold tracking-tight text-cobalt md:text-3xl"
         >
           Come on by.
         </motion.p>
 
         <motion.p
-          {...enterProps(reduceMotion, 0.2)}
+          {...enterProps(0.2)}
           className="mt-5 max-w-xl text-lg text-pretty text-ink-soft md:text-xl"
         >
           Your orgs&apos; events in one feed built around you. Save what you
@@ -126,7 +122,7 @@ export function Hero() {
         </motion.p>
 
         <motion.div
-          {...enterProps(reduceMotion, 0.26)}
+          {...enterProps(0.26)}
           className="mt-9 flex flex-wrap items-center justify-center gap-3"
         >
           <Button
@@ -150,7 +146,7 @@ export function Hero() {
         </motion.div>
 
         <motion.p
-          {...enterProps(reduceMotion, 0.32)}
+          {...enterProps(0.32)}
           className="mt-5 text-sm text-ink-soft"
         >
           Free for Elon students. Sign in with your @elon.edu email.
