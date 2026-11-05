@@ -1,36 +1,74 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-/* ── Quad brand tokens ─────────────────────────────────────────────
-   Maroon-soaked dark theme derived from the app icon: deep maroon
-   field, bright pin red, Elon gold details, warm paper text. */
+/* ── onby brand tokens ──────────────────────────────────────────────
+   Warm canvas, white surfaces, one cobalt accent and the coral dot
+   from the mark. Light first; dark follows the system. Values mirror
+   the app's lib/palette.ts so the site and the app read as one thing. */
 :root {
-  --night: #0a0406;
-  --paper: #f6efe9;
-  --maroon: #73000a;
-  --maroon-deep: #3d0410;
-  --pin: #e8323f;
-  --gold: #c9a55c;
+  --canvas: #f6f4f0;
+  --surface: #ffffff;
+  --surface-2: #efece6;
+  --ink: #1c1c1e;
+  --ink-soft: #5c5c63;
+  --line: #e8e4dc;
+  --cobalt: #2b5cff;
+  --cobalt-deep: #1f46d6;
+  --cobalt-soft: #e9eeff;
+  --coral: #ff6a5c;
+  --coral-soft: #ffece9;
+  --glow: rgba(43, 92, 255, 0.18);
+  --dot-grid: rgba(28, 28, 30, 0.07);
+  --phone-bezel: #1c1c1e;
+  --phone-rim: rgba(28, 28, 30, 0.12);
+  --glass: rgba(255, 255, 255, 0.72);
+  --nav-glass: rgba(246, 244, 240, 0.78);
+  --shadow-soft: 0 1px 2px rgba(28, 28, 30, 0.04), 0 16px 40px -20px rgba(28, 28, 30, 0.18);
+  --shadow-lift: 0 2px 4px rgba(28, 28, 30, 0.05), 0 28px 60px -24px rgba(28, 28, 30, 0.28);
 
-  --background: var(--night);
-  --foreground: var(--paper);
-  --card: #150a0e;
-  --card-foreground: var(--paper);
-  --popover: #150a0e;
-  --popover-foreground: var(--paper);
-  --primary: var(--pin);
-  --primary-foreground: #fff7f2;
-  --secondary: var(--maroon);
-  --secondary-foreground: var(--paper);
-  --muted: #241318;
-  --muted-foreground: #b39a9d;
-  --accent: #241318;
-  --accent-foreground: var(--paper);
-  --destructive: var(--pin);
-  --border: rgba(246, 239, 233, 0.1);
-  --input: rgba(246, 239, 233, 0.14);
-  --ring: var(--pin);
-  --radius: 0.75rem;
+  --background: var(--canvas);
+  --foreground: var(--ink);
+  --card: var(--surface);
+  --card-foreground: var(--ink);
+  --popover: var(--surface);
+  --popover-foreground: var(--ink);
+  --primary: var(--cobalt);
+  --primary-foreground: #ffffff;
+  --secondary: var(--surface-2);
+  --secondary-foreground: var(--ink);
+  --muted: var(--surface-2);
+  --muted-foreground: var(--ink-soft);
+  --accent: var(--cobalt-soft);
+  --accent-foreground: var(--ink);
+  --destructive: var(--coral);
+  --border: var(--line);
+  --input: var(--line);
+  --ring: var(--cobalt);
+  --radius: 0.875rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --canvas: #000000;
+    --surface: #1c1c1e;
+    --surface-2: #2c2c2e;
+    --ink: #f5f5f7;
+    --ink-soft: #a1a1a6;
+    --line: rgba(255, 255, 255, 0.1);
+    --cobalt: #5e82ff;
+    --cobalt-deep: #7a98ff;
+    --cobalt-soft: rgba(94, 130, 255, 0.16);
+    --coral: #ff6a5c;
+    --coral-soft: rgba(255, 106, 92, 0.16);
+    --glow: rgba(94, 130, 255, 0.22);
+    --dot-grid: rgba(255, 255, 255, 0.08);
+    --phone-bezel: #2c2c2e;
+    --phone-rim: rgba(255, 255, 255, 0.14);
+    --glass: rgba(28, 28, 30, 0.72);
+    --nav-glass: rgba(0, 0, 0, 0.6);
+    --shadow-soft: 0 1px 2px rgba(0, 0, 0, 0.4), 0 16px 40px -20px rgba(0, 0, 0, 0.7);
+    --shadow-lift: 0 2px 4px rgba(0, 0, 0, 0.5), 0 28px 60px -24px rgba(0, 0, 0, 0.8);
+  }
 }
 
 @theme inline {
@@ -53,25 +91,36 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
 
-  --color-night: var(--night);
-  --color-paper: var(--paper);
-  --color-maroon: var(--maroon);
-  --color-maroon-deep: var(--maroon-deep);
-  --color-pin: var(--pin);
-  --color-gold: var(--gold);
+  --color-canvas: var(--canvas);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-line: var(--line);
+  --color-cobalt: var(--cobalt);
+  --color-cobalt-deep: var(--cobalt-deep);
+  --color-cobalt-soft: var(--cobalt-soft);
+  --color-coral: var(--coral);
+  --color-coral-soft: var(--coral-soft);
 
-  /* Platform system stack, same as the app: SF on Apple, Roboto on Android */
-  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI",
+  /* Body: the platform face, same as the app (SF on Apple, Roboto on Android).
+     Display: the rounded face the app uses for the wordmark, date numerals
+     and stats. ui-rounded resolves to SF Pro Rounded on Apple devices;
+     Nunito is the web fallback everywhere else. */
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI",
     Roboto, "Helvetica Neue", Arial, sans-serif;
-  --font-display: var(--font-sans);
-  --font-mono: var(--font-space-mono), ui-monospace, monospace;
+  --font-display: ui-rounded, "SF Pro Rounded", var(--font-nunito),
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
 
-  --animate-marquee: marquee 45s linear infinite;
+  --shadow-soft: var(--shadow-soft);
+  --shadow-lift: var(--shadow-lift);
+
+  --animate-marquee: marquee 48s linear infinite;
   --animate-float: float 6s ease-in-out infinite;
   --animate-ping-slow: ping-slow 2.4s cubic-bezier(0, 0, 0.2, 1) infinite;
 }
@@ -114,6 +163,7 @@
 
   html {
     scroll-behavior: smooth;
+    color-scheme: light dark;
   }
 
   body {
@@ -124,12 +174,12 @@
   }
 
   ::selection {
-    background-color: var(--maroon);
-    color: var(--paper);
+    background-color: var(--cobalt-soft);
+    color: var(--ink);
   }
 
   :focus-visible {
-    outline: 2px solid var(--pin);
+    outline: 2px solid var(--cobalt);
     outline-offset: 3px;
   }
 
@@ -145,21 +195,28 @@
   }
 }
 
+/* Section label: small caps in cobalt, the deck's eyebrow. */
 @utility eyebrow {
-  font-family: var(--font-mono);
-  font-size: 0.6875rem;
-  letter-spacing: 0.22em;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--cobalt);
 }
 
-/* Faint film grain so the dark maroon doesn't render flat */
+/* Rounded numerals and stats, like the app. */
+@utility numerals {
+  font-family: var(--font-display);
+  font-variant-numeric: tabular-nums;
+}
+
+/* A whisper of grain so the warm canvas never reads as flat vector. */
 .grain::after {
   content: "";
   position: fixed;
   inset: 0;
   z-index: 60;
   pointer-events: none;
-  opacity: 0.05;
+  opacity: 0.035;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.6'/%3E%3C/svg%3E");
 }

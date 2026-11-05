@@ -2,7 +2,7 @@ import { Cta } from "@/components/site/cta";
 import { Faq } from "@/components/site/faq";
 import { FeatureGrid } from "@/components/site/feature-grid";
 import { Footer } from "@/components/site/footer";
-import { ForClubs } from "@/components/site/for-clubs";
+import { ForOrgs } from "@/components/site/for-orgs";
 import { Hero } from "@/components/site/hero";
 import { Navbar } from "@/components/site/navbar";
 import { Showcase } from "@/components/site/showcase";
@@ -18,7 +18,7 @@ export default function Home() {
         <Ticker />
         <Showcase />
         <FeatureGrid />
-        <ForClubs />
+        <ForOrgs />
         <Steps />
         <Faq />
         <Cta />

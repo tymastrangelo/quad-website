@@ -1,44 +1,38 @@
 @AGENTS.md
 
-# Quad Marketing / Landing Site
+# onby marketing / landing site (formerly Quad)
 
-Next.js 16 (App Router) · TypeScript · Tailwind CSS v4 · shadcn/ui (radix-ui flavor) · Motion (`motion/react`). Fully static one page marketing site for the Quad mobile app. This is **not** the app repo; the Expo/Supabase app lives elsewhere and this folder only ships the website.
+Next.js 16 (App Router) · TypeScript · Tailwind CSS v4 · shadcn/ui (radix-ui flavor) · Motion (`motion/react`). Fully static one page marketing site for the onby mobile app plus `/privacy` and `/terms`. This is **not** the app repo; the Expo/Supabase app lives in `../quad-app` and this folder only ships the website. Rebranded Quad → onby on 2026-11-05 (branch `onby-rebrand`).
 
 ## Commands
 - `npm run dev`: dev server
-- `npx tsc --noEmit`: typecheck
+- `npx tsc --noEmit` · `npx eslint app components`: typecheck + lint (both must be clean)
 - `npm run build`: production build (all routes prerender static; treat a non-static route as a regression)
-- The user owns deploys and any future git history. Don't init git, commit, or deploy unless asked.
-- All `*.md` files are gitignored except READMEs (same policy as the app repo). CLAUDE.md, DESIGN_GUIDE.md, AGENTS.md, privacy.md, and terms.md are local only; never suggest committing them.
+- Git: Tyler owns `master` and the live deploy. Work on a branch and push it when he asks; never push to `master` or deploy. All `*.md` files are gitignored except READMEs; CLAUDE.md, DESIGN_GUIDE.md, AGENTS.md, privacy.md, terms.md are local only.
 
 ## Structure
-- `app/layout.tsx`: fonts + metadata. `metadataBase` is unset until there's a real domain (harmless build warning).
+- `app/layout.tsx`: fonts + metadata. Nunito (next/font) is only the web fallback for the rounded display face. `metadataBase` is unset until there's a real domain (harmless build warning).
 - `app/page.tsx`: assembles the sections in order; each section is one file in `components/site/`.
-- `app/privacy/page.tsx` + `app/terms/page.tsx`: legal pages built on the shared primitives in `components/site/legal.tsx`. Their content is transcribed from the app's legal screens; `privacy.md` and `terms.md` at repo root are the source dumps (React Native screen code) Tyler exports from the app. When he updates those files, re-sync the pages. Legal text is transcribed faithfully (it keeps words like RSVP because the policy describes backend data); only em dashes get converted to commas.
-- `components/site/`: Navbar, Hero (3D phone lift), Ticker, Showcase, FeatureGrid, ForClubs, Steps, Faq, Cta, Footer, plus shared bits (PinMark/QuadWordmark, Reveal, SectionHeading, PhoneFrame, StoreBadges).
-- `components/ui/`: shadcn components (add more via `npx shadcn@latest add <name>`; `components.json` is configured).
-- `public/quad-screenshot.png`: the real app screenshot inside PhoneFrame. To update it, drop a new iPhone screenshot (1179×2556) in `assets/images/quad/` and copy it over.
-- `assets/`: source images (app icon, screenshot, old template art). Not served; copy what's needed into `public/`.
-- `_legacy-template/`: the original HTML template the site replaced. Reference only; never import from it.
-- `DESIGN_GUIDE.md`: the full brand/design system (colors, type, motion, components). Keep it in sync with any visual change here; the user also uses it to update the app.
+- `app/privacy/page.tsx` + `app/terms/page.tsx`: legal pages on the shared primitives in `components/site/legal.tsx`. Product name is onby, legal entity stays Quad Software, LLC. The legal substance still describes posts, RSVPs and club admin tools from the Quad era; it is under review with the Elon Law clinic, so change wording only when Tyler hands over new text.
+- `components/site/`: Navbar, Hero (3D phone lift), Ticker, Showcase, FeatureGrid, ForOrgs, Steps, Faq, Cta, Footer, plus shared bits (`brand-mark.tsx`: `OnbyWordmark` + `Dot`, Reveal, SectionHeading, PhoneFrame, StoreBadges).
+- `components/site/phone-frame.tsx` renders a CSS mock of the Home screen (`MockHome`) with Elon's maroon as the in-app tint, because inside the Elon app the interactive tint is the school's color, not cobalt. Swap it for a real screenshot when one exists: drop a 1179×2556 PNG in `public/`, render `<Image fill />` as `children`.
+- `public/onby-icon.png`, `app/icon.png`, `app/apple-icon.png`: rendered from `assets/images/onby/icon.png` (copied from the app repo's `assets/icon.png`). Re-copy when the app icon changes.
+- `assets/images/quad/`: the old brand's art, reference only. `_legacy-template/`: the original HTML template, never import from it.
+- `DESIGN_GUIDE.md`: the site's design system. Keep it in sync with any visual change.
 
-## Design system (all tokens in `app/globals.css`)
-- Palette: night `#0a0406` (bg), paper `#f6efe9` (text), maroon `#73000a`, maroon-deep `#3d0410`, pin `#e8323f` (CTAs/live dots), gold `#c9a55c` (eyebrows/icons). Use the Tailwind names (`bg-night`, `text-pin`, `text-gold`, …), never raw hexes in components. The user loves this palette; do not change it.
-- **Typography: platform system font stack only** (SF on Apple, Roboto on Android), matching the app, which uses no custom fonts. `--font-sans` and `--font-display` are both the system stack; weights follow the app's convention (700 headings, 600 emphasis, 500 labels). Space Mono is the one exception, used only for tiny uppercase eyebrow/label text. Never add another web font.
-- The nav/footer wordmark is uppercase QUAD (bold, slight letterspacing) to match the logo.
-- `eyebrow` utility class = Space Mono uppercase gold label; use it for all section eyebrows.
-- Server components by default; `"use client"` only where Motion needs it (Hero, Reveal). Scroll reveals go through the `<Reveal>` wrapper; don't hand-roll new ones.
-- Every animation must respect reduced motion: Motion via `useReducedMotion`, CSS keyframes via the `prefers-reduced-motion` block in globals.css.
-- 3D is CSS perspective transforms (hero phone lift). No WebGL/three.js; keep the bundle light.
+## Design system (all tokens in `app/globals.css`, mirrors the app's `lib/palette.ts`)
+- Light first, dark follows `prefers-color-scheme`. Canvas `#F6F4F0` / black · surface white / `#1C1C1E` · surface-2 `#EFECE6` / `#2C2C2E` · ink `#1C1C1E` / `#F5F5F7` · ink-soft `#5C5C63` · line `#E8E4DC` · cobalt `#2B5CFF` / `#5E82FF` · cobalt-soft `#E9EEFF` · coral `#FF6A5C`. Use the Tailwind names (`bg-canvas`, `text-ink-soft`, `border-line`, `bg-cobalt`, `text-coral`, …), never raw hexes in components. The one exception is `MockHome`, which hardcodes the phone's light UI and Elon maroon on purpose.
+- One interactive accent: cobalt. Coral is the dot only: the wordmark period, live indicators, ticker separators, the CTA watermark. Never a coral button or coral body text.
+- Type: body is the platform system stack (SF / Roboto), display is `font-display` = `ui-rounded` → SF Pro Rounded on Apple, Nunito elsewhere. Headings 800 (`font-extrabold`), card titles 600, labels 500. `eyebrow` utility = 12px cobalt uppercase +0.14em. `numerals` utility = rounded tabular figures for times, counts, step numbers. No mono face anymore.
+- Radii 12/16/22/28 (`rounded-xl`…`rounded-[28px]`), pills for buttons and chips. Cards: white surface + `border-line` hairline + `shadow-soft`; hover recolors the border to `cobalt/40` and lifts 2 to 4px.
+- Server components by default; `"use client"` only where Motion needs it (Hero, Reveal, StoreBadges). Scroll reveals go through `<Reveal>`. Every animation respects reduced motion (`useReducedMotion`, the `prefers-reduced-motion` block). 3D is CSS perspective only.
 
 ## Copy rules
-- **No em dashes or en dashes anywhere** (copy, docs, comments). The user explicitly hates them. Rewrite with periods, commas, colons, or middots (`·` is the separator for meta lines like "Rudd Field · 4 min walk"). Avoid hyphenated compounds in headings and titles too; rephrase instead (e.g. "Going in one tap", not "One-tap Going").
-- Everything on the page must stay true to the real app: @elon.edu only signup, free, iOS + Android, For You recommendations, live/upcoming events, campus map, club posts/feed, one tap "I'm going", saved events, calendar export, invites, per type notification prefs + server enforced quiet hours, club admin tools, blocking + in app account deletion. Don't invent user counts or ratings.
-- **Never say RSVP.** "I'm going" is a social signal (friends invite each other; events show how many people are probably going), not an RSVP. Student Involvement runs official RSVPs separately on PhoenixConnect, and the distinction matters to them. Say "going", "going count", "who's in".
-- **Club onboarding + Fall 2026 pilot**: clubs must be registered on PhoenixConnect first, then submitted through the in-app form for approval. The Fall 2026 demo launches with preapproved organizations only; strong student support gives Quad **the chance** to expand to all clubs in spring and beyond. Expansion is not guaranteed, so never write "Quad opens to every club" as a promise. This messaging lives in the For Clubs pilot note, two FAQ entries, and the CTA fine print. Frame it as momentum, not limitation.
-- **All clubs are public right now.** No private clubs, no follow requests, no approve/decline follow flows. Don't depict or mention them.
-- **Neither store listing is live yet.** Both store badges are buttons that pop a "Coming soon" bubble (see `StoreBadges`), not links. When a listing goes live, swap that badge back to an `<a>` with the real URL. Both badges use the official store artwork in `public/badge-app-store.svg` and `public/badge-google-play.svg`; never recreate them by hand.
-- Canonical campus coordinates: `36.1036° N · 79.5043° W` (hero eyebrow + footer). Don't reintroduce older values.
-- Legal/copyright name is **Quad Connect** (footer: "© 2026 Quad Connect. All rights reserved."). Keep "Not affiliated with Elon University."
-- Privacy and terms live at `/privacy` and `/terms`, linked from the footer. Nav/footer anchor links use the `/#section` form so they work from subpages.
-- Favicon: `app/icon.png` (512px, pin on maroon glow, rounded with transparent corners). SVG source is `assets/images/quad/favicon-pin.svg`; re-render with headless Chrome if it changes. `app/apple-icon.png` stays the full-bleed logo card (iOS masks its own corners; transparency would show black).
+- **No em dashes or en dashes anywhere** (copy, docs, comments). Periods, commas, colons, or middots (`·`) for meta lines. Avoid hyphenated compounds in headings.
+- The brand is lowercase `onby` with a coral period in the wordmark; in prose it is `onby`, even at the start of a sentence. Tagline: "Everything happening on campus. Come on by."
+- Stay true to the real app and the Spring 2027 Elon pilot: @elon.edu only signup, free, iOS + Android, read-only from PhoenixCONNECT, every event links back, For You feed, follow orgs, save + reminders, opt-in daily digest, "I'm going" + calendar export, invites, per type notification prefs + server enforced quiet hours, campus map, blocking + in app account deletion. **No org posts or feed for Elon**, no event submissions, no rosters or SSO. Don't invent user counts or ratings.
+- **Never say RSVP.** Say "I'm going", "going", "who's in".
+- **Pilot framing:** spring 2027 at Elon with "a set of approved organizations" while impact is measured; everything else is on PhoenixCONNECT; the list "can grow from there". Do not name Student Involvement as a partner on the site until Tyler confirms the pilot is approved (meeting 2026-11-06). Never promise expansion. Orgs do nothing to join: no submissions, no "request your org" button.
+- Other schools come later; Elon stays first. Don't name other campuses.
+- **Neither store listing is live.** Both badges are buttons that pop a "Spring 2027" bubble (`StoreBadges`). When a listing goes live, swap that badge back to an `<a>` with the real URL. Official store artwork only.
+- Legal/copyright: "© 2026 Quad Software LLC. All rights reserved." + "Not affiliated with Elon University." Support: tmastrangelo@elon.edu. Nav/footer anchors use `/#section` so they work from subpages.

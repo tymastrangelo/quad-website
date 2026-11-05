@@ -1,11 +1,12 @@
-import { QuadWordmark } from "./pin-logo";
+import Image from "next/image";
+import { OnbyWordmark } from "./brand-mark";
 
 const COLUMNS = [
   {
     heading: "Product",
     links: [
       { label: "The app", href: "/#app" },
-      { label: "For clubs", href: "/#clubs" },
+      { label: "For orgs", href: "/#orgs" },
       { label: "FAQ", href: "/#faq" },
       { label: "Download", href: "/#download" },
     ],
@@ -13,7 +14,7 @@ const COLUMNS = [
   {
     heading: "Support",
     links: [
-      { label: "Feedback (in the app)", href: "/#faq" },
+      { label: "tmastrangelo@elon.edu", href: "mailto:tmastrangelo@elon.edu" },
       { label: "Privacy policy", href: "/privacy" },
       { label: "Terms of service", href: "/terms" },
     ],
@@ -22,16 +23,26 @@ const COLUMNS = [
 
 export function Footer() {
   return (
-    <footer className="border-t border-white/10">
+    <footer className="border-t border-line bg-surface">
       <div className="mx-auto flex max-w-6xl flex-col gap-12 px-6 py-16 md:flex-row md:justify-between">
         <div className="flex max-w-xs flex-col gap-4">
-          <QuadWordmark />
-          <p className="text-sm text-muted-foreground">
-            The home for everything happening at Elon University. Built on
-            campus, by a student, for students.
+          <div className="flex items-center gap-3">
+            <Image
+              src="/onby-icon.png"
+              alt=""
+              width={36}
+              height={36}
+              className="size-9 rounded-[10px]"
+            />
+            <OnbyWordmark />
+          </div>
+          <p className="text-sm text-ink-soft">
+            Everything happening on campus. Come on by. Built at Elon, by a
+            student, for students.
           </p>
-          <p className="font-mono text-[11px] tracking-[0.18em] text-paper/40 uppercase">
-            36.1036° N · 79.5043° W
+          <p className="text-xs text-ink-soft/80">
+            onby is read only. Events come from PhoenixCONNECT and link back
+            to it.
           </p>
         </div>
         <div className="flex gap-16">
@@ -42,7 +53,7 @@ export function Footer() {
                 <a
                   key={link.label}
                   href={link.href}
-                  className="text-sm text-paper/70 transition-colors hover:text-paper"
+                  className="text-sm text-ink-soft transition-colors hover:text-ink"
                 >
                   {link.label}
                 </a>
@@ -51,9 +62,9 @@ export function Footer() {
           ))}
         </div>
       </div>
-      <div className="border-t border-white/5">
-        <div className="mx-auto flex max-w-6xl flex-col gap-2 px-6 py-6 text-xs text-paper/40 md:flex-row md:justify-between">
-          <p>© 2026 Quad Connect. All rights reserved.</p>
+      <div className="border-t border-line">
+        <div className="mx-auto flex max-w-6xl flex-col gap-2 px-6 py-6 text-xs text-ink-soft md:flex-row md:justify-between">
+          <p>© 2026 Quad Software LLC. All rights reserved.</p>
           <p>Not affiliated with Elon University.</p>
         </div>
       </div>

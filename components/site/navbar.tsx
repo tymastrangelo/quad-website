@@ -1,26 +1,27 @@
+import Link from "next/link";
 import { Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { QuadWordmark } from "./pin-logo";
+import { OnbyWordmark } from "./brand-mark";
 
 const LINKS = [
   { href: "/#app", label: "The app" },
-  { href: "/#clubs", label: "For clubs" },
+  { href: "/#orgs", label: "For orgs" },
   { href: "/#faq", label: "FAQ" },
 ];
 
 export function Navbar() {
   return (
     <header className="fixed inset-x-0 top-4 z-50 px-4">
-      <nav className="mx-auto flex h-14 max-w-4xl items-center justify-between rounded-full border border-white/10 bg-night/70 pr-2 pl-5 backdrop-blur-xl">
-        <a href="/" aria-label="Quad home" className="rounded-full">
-          <QuadWordmark />
-        </a>
+      <nav className="mx-auto flex h-14 max-w-4xl items-center justify-between rounded-full border border-line bg-[var(--nav-glass)] pr-2 pl-5 shadow-soft backdrop-blur-xl">
+        <Link href="/" aria-label="onby home" className="rounded-full">
+          <OnbyWordmark />
+        </Link>
         <div className="hidden items-center gap-1 md:flex">
           {LINKS.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="rounded-full px-4 py-2 text-sm text-paper/70 transition-colors hover:text-paper"
+              className="rounded-full px-4 py-2 text-sm font-medium text-ink-soft transition-colors hover:bg-surface-2 hover:text-ink"
             >
               {link.label}
             </a>
@@ -28,12 +29,12 @@ export function Navbar() {
         </div>
         <Button
           asChild
-          className="rounded-full bg-pin px-5 font-medium text-white hover:bg-pin/90"
+          className="rounded-full bg-cobalt px-5 font-semibold text-white transition-transform hover:bg-cobalt-deep active:scale-[0.97]"
         >
-          <a href="/#download">
+          <Link href="/#download">
             <Download data-slot="icon" />
             Get the app
-          </a>
+          </Link>
         </Button>
       </nav>
     </header>

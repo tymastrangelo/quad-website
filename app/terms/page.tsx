@@ -12,14 +12,14 @@ import {
 } from "@/components/site/legal";
 
 export const metadata: Metadata = {
-  title: "Terms of Service | Quad",
+  title: "Terms of Service | onby",
   description:
-    "The Terms of Service governing your use of the Quad mobile application, operated by Quad Software, LLC.",
+    "The Terms of Service governing your use of the onby mobile application, operated by Quad Software, LLC.",
 };
 
 function PrivacyLink() {
   return (
-    <Link href="/privacy" className="font-medium text-pin hover:underline">
+    <Link href="/privacy" className="font-medium text-cobalt hover:underline">
       Privacy Policy
     </Link>
   );
@@ -28,7 +28,7 @@ function PrivacyLink() {
 export default function TermsPage() {
   return (
     <LegalPage
-      title="Quad Terms of Service"
+      title="onby Terms of Service"
       effective="June 16, 2026"
       updated="August 17, 2026"
     >
@@ -36,8 +36,8 @@ export default function TermsPage() {
         <P>
           These Terms of Service (the “Terms”) are a binding agreement
           between you and Quad Software, LLC, a North Carolina limited
-          liability company (“Quad,” “we,” “our,” or “us”), governing your
-          access to and use of the Quad mobile application (the “App”). By
+          liability company (“onby,” “we,” “our,” or “us”), governing your
+          access to and use of the onby mobile application (the “App”). By
           creating an account or using the App, you agree to these Terms.
           If you do not agree, do not use the App.
         </P>
@@ -49,7 +49,7 @@ export default function TermsPage() {
 
       <LegalSection title="1. Who We Are">
         <P>
-          Quad is an independent application operated by Quad Software,
+          onby is an independent application operated by Quad Software,
           LLC. It is designed to serve the Elon University community but is
           not officially affiliated with, sponsored by, or endorsed by Elon
           University. The App helps students discover campus clubs and
@@ -166,20 +166,20 @@ export default function TermsPage() {
 
       <LegalSection title="7. Platform Role; Events and Assumption of Risk">
         <P>
-          Quad provides a digital space for student organizations and
+          onby provides a digital space for student organizations and
           community members to share information about events and
-          opportunities. Quad does not organize, host, supervise, or manage
+          opportunities. onby does not organize, host, supervise, or manage
           any event listed in the App. Event organizers are solely
           responsible for the accuracy of their listings and for complying
           with campus rules and applicable law.
         </P>
         <P>
           You understand and agree that participating in events promoted
-          through the App is entirely voluntary and at your own risk. Quad
+          through the App is entirely voluntary and at your own risk. onby
           makes no representations about the safety, suitability, or
           quality of any event or host. By attending, you assume all risks,
           including injury, illness, property damage, or other loss, and
-          you release Quad and its operators from any liability arising
+          you release onby and its operators from any liability arising
           from your participation.
         </P>
       </LegalSection>
@@ -188,7 +188,7 @@ export default function TermsPage() {
         <P>
           The App may display links to club websites, social media
           profiles, ticketing platforms, forms, or other external
-          resources. Quad does not control, endorse, or assume
+          resources. onby does not control, endorse, or assume
           responsibility for these third party services, their content,
           fees, or practices. Review the terms and privacy policies of any
           third party service before providing information or payment
@@ -207,7 +207,7 @@ export default function TermsPage() {
       <LegalSection title="10. Intellectual Property">
         <P>
           The App, including its design, features, and underlying software,
-          and the “Quad” name and marks, are owned by Quad Software, LLC
+          and the “onby” name and marks, are owned by Quad Software, LLC
           and protected by intellectual property laws. Except for Your
           Content, you may not copy, modify, distribute, reverse engineer,
           or create derivative works from the App without our prior written
@@ -299,7 +299,7 @@ export default function TermsPage() {
       </LegalSection>
 
       <LegalFootnote>
-        © 2026 Quad Software, LLC. All rights reserved. Quad and the Quad
+        © 2026 Quad Software, LLC. All rights reserved. onby and the onby
         mark are pending federal trademark registration (USPTO Serial No.
         99673569).
       </LegalFootnote>

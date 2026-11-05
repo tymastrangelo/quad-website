@@ -12,22 +12,22 @@ import {
 } from "@/components/site/legal";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | Quad",
+  title: "Privacy Policy | onby",
   description:
-    "How Quad Software, LLC collects, uses, stores, and protects your personal information in the Quad Connect app.",
+    "How Quad Software, LLC collects, uses, stores, and protects your personal information in the onby app.",
 };
 
 export default function PrivacyPage() {
   return (
     <LegalPage
-      title="Quad Connect Privacy Policy"
+      title="onby Privacy Policy"
       effective="June 22, 2026"
       updated="August 17, 2026"
     >
       <div className="flex flex-col gap-4">
         <P>
           Quad Software, LLC, a North Carolina limited liability company
-          (“Quad,” “we,” “our,” or “us”), operates the Quad Connect mobile
+          (“onby,” “we,” “our,” or “us”), operates the onby mobile
           application (the “App”). This Privacy Policy explains how we
           collect, use, store, disclose, and protect your personal
           information when you use the App, and describes your rights and
@@ -39,13 +39,13 @@ export default function PrivacyPage() {
           Policy. If you do not agree, please do not use the App.
         </P>
         <P>
-          <B>Independence from Elon University.</B> Quad Connect is an
+          <B>Independence from Elon University.</B> onby is an
           independent application owned and operated by Quad Software, LLC.
           It is not affiliated with, sponsored by, endorsed by, or an
           official service of Elon University. The App is designed to serve
           the Elon University community but is operated independently.
-          Where Quad acts as a service provider to Elon University under a
-          separate written agreement, that agreement governs Quad’s
+          Where onby acts as a service provider to Elon University under a
+          separate written agreement, that agreement governs onby’s
           handling of any information Elon University provides to us, and
           its terms control over this Policy to the extent of any conflict
           with respect to that information.
@@ -221,7 +221,7 @@ export default function PrivacyPage() {
           optional integration with Elon University’s identity system. If
           and when university SSO is enabled, you would sign in through
           Elon’s identity provider (for example, a SAML or Shibboleth based
-          service), and Elon University, not Quad, would control identity
+          service), and Elon University, not onby, would control identity
           authentication. In that case we would receive a limited set of
           directory information needed to operate your account, such as
           your name, @elon.edu email address, and a user identifier, and
@@ -396,7 +396,7 @@ export default function PrivacyPage() {
           We may disclose your personal information if we believe in good
           faith that disclosure is necessary to: (a) comply with applicable
           law or respond to valid legal process, such as a court order or
-          subpoena; (b) protect the rights, property, or safety of Quad
+          subpoena; (b) protect the rights, property, or safety of onby
           Software, LLC, our users, or the public; or (c) detect, prevent,
           or address fraud, security, or technical issues.
         </P>
@@ -742,8 +742,8 @@ export default function PrivacyPage() {
       </LegalSection>
 
       <LegalFootnote>
-        © 2026 Quad Software, LLC. All rights reserved. Quad Connect and
-        the Quad Connect mark are pending federal trademark registration
+        © 2026 Quad Software, LLC. All rights reserved. onby and
+        the onby mark are pending federal trademark registration
         (USPTO Serial No. 99673569).
       </LegalFootnote>
     </LegalPage>

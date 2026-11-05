@@ -8,10 +8,9 @@ import {
   useSpring,
   useTransform,
 } from "motion/react";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Bookmark } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { PhoneFrame } from "./phone-frame";
-import { PinMark } from "./pin-logo";
 
 function enterProps(reduceMotion: boolean, delay: number) {
   return reduceMotion
@@ -56,23 +55,23 @@ export function Hero() {
       {/* map-dot atmosphere */}
       <div
         aria-hidden
-        className="absolute inset-0 bg-[radial-gradient(rgba(246,239,233,0.09)_1px,transparent_1px)] bg-size-[26px_26px] mask-radial-from-5% mask-radial-to-70% mask-radial-at-top"
+        className="absolute inset-0 bg-[radial-gradient(var(--dot-grid)_1px,transparent_1px)] bg-size-[26px_26px] mask-radial-from-5% mask-radial-to-70% mask-radial-at-top"
       />
-      {/* pin ripple: concentric rings radiating from where the phone stands,
-          like a dropped pin pinging on the campus map */}
+      {/* the dot's ripple: concentric cobalt rings radiating from where the
+          phone stands, like a ping across the campus */}
       <div
         aria-hidden
-        className="absolute inset-x-0 bottom-0 h-[85%] bg-[repeating-radial-gradient(circle_at_50%_100%,rgba(232,50,63,0.22)_0px,rgba(232,50,63,0.22)_1px,transparent_1px,transparent_110px)] [mask-image:radial-gradient(ellipse_60%_90%_at_50%_100%,black,transparent_78%)]"
+        className="absolute inset-x-0 bottom-0 h-[85%] bg-[repeating-radial-gradient(circle_at_50%_100%,var(--glow)_0px,var(--glow)_1px,transparent_1px,transparent_110px)] [mask-image:radial-gradient(ellipse_60%_90%_at_50%_100%,black,transparent_78%)]"
       />
-      {/* low horizon glow grounding the phone, not a floating orb */}
+      {/* low cobalt horizon grounding the phone */}
       <div
         aria-hidden
-        className="absolute inset-x-0 bottom-0 h-[55%] bg-[radial-gradient(ellipse_55%_75%_at_50%_100%,rgba(115,0,10,0.6),rgba(61,4,16,0.25)_55%,transparent_75%)]"
+        className="absolute inset-x-0 bottom-0 h-[55%] bg-[radial-gradient(ellipse_55%_75%_at_50%_100%,var(--glow),transparent_70%)]"
       />
-      {/* settle back to night before the ticker so the section seam is invisible */}
+      {/* settle back to the canvas before the ticker */}
       <div
         aria-hidden
-        className="absolute inset-x-0 bottom-0 h-44 bg-linear-to-t from-night to-transparent"
+        className="absolute inset-x-0 bottom-0 h-44 bg-linear-to-t from-canvas to-transparent"
       />
 
       <div className="relative mx-auto flex max-w-6xl flex-col items-center px-6 pt-36 text-center md:pt-44">
@@ -80,17 +79,16 @@ export function Hero() {
           {...enterProps(reduceMotion, 0)}
           className="eyebrow flex items-center gap-2"
         >
-          <PinMark className="h-3.5 w-3.5" />
-          36.1036° N · 79.5043° W · Elon University
+          Elon University · Spring 2027
         </motion.p>
 
         <motion.h1
           {...enterProps(reduceMotion, 0.08)}
-          className="font-display mt-6 max-w-4xl text-6xl font-bold tracking-tight text-balance md:text-8xl"
+          className="font-display mt-6 max-w-4xl text-[2.9rem] leading-[1.02] font-extrabold tracking-tight text-balance sm:text-6xl md:text-[5.5rem]"
         >
-          Campus happens{" "}
-          <span className="whitespace-nowrap text-pin">
-            here
+          Everything happening on{" "}
+          <span className="whitespace-nowrap">
+            campus
             <motion.span
               className="inline-block"
               {...(reduceMotion
@@ -106,28 +104,35 @@ export function Hero() {
                     },
                   })}
             >
-              <PinMark className="ml-1 inline-block h-[0.62em] w-[0.62em] align-baseline" />
+              <span className="text-coral">.</span>
             </motion.span>
           </span>
         </motion.h1>
 
         <motion.p
-          {...enterProps(reduceMotion, 0.16)}
-          className="mt-6 max-w-xl text-lg text-pretty text-muted-foreground md:text-xl"
+          {...enterProps(reduceMotion, 0.14)}
+          className="font-display mt-4 text-2xl font-extrabold tracking-tight text-cobalt md:text-3xl"
         >
-          One feed and a live campus map for what Elon&apos;s clubs are up
-          to. See what&apos;s on tonight, tap &quot;I&apos;m going&quot;, and
-          bring your friends along.
+          Come on by.
+        </motion.p>
+
+        <motion.p
+          {...enterProps(reduceMotion, 0.2)}
+          className="mt-5 max-w-xl text-lg text-pretty text-ink-soft md:text-xl"
+        >
+          Your orgs&apos; events in one feed built around you. Save what you
+          want to catch, get a nudge before it starts, and stop hearing
+          &ldquo;wait, that was tonight?&rdquo;
         </motion.p>
 
         <motion.div
-          {...enterProps(reduceMotion, 0.24)}
+          {...enterProps(reduceMotion, 0.26)}
           className="mt-9 flex flex-wrap items-center justify-center gap-3"
         >
           <Button
             asChild
             size="lg"
-            className="h-12 rounded-full bg-pin px-7 text-base font-medium text-white hover:bg-pin/90"
+            className="h-12 rounded-full bg-cobalt px-7 text-base font-semibold text-white transition-transform hover:bg-cobalt-deep active:scale-[0.97]"
           >
             <a href="#download">Get the app</a>
           </Button>
@@ -135,7 +140,7 @@ export function Hero() {
             asChild
             size="lg"
             variant="outline"
-            className="h-12 rounded-full border-white/20 bg-transparent px-7 text-base text-paper hover:bg-white/5 hover:text-paper"
+            className="h-12 rounded-full border-line bg-surface px-7 text-base font-medium text-ink shadow-soft transition-transform hover:bg-surface-2 hover:text-ink active:scale-[0.97]"
           >
             <a href="#app">
               See what&apos;s inside
@@ -146,9 +151,9 @@ export function Hero() {
 
         <motion.p
           {...enterProps(reduceMotion, 0.32)}
-          className="mt-5 text-sm text-paper/45"
+          className="mt-5 text-sm text-ink-soft"
         >
-          Free for students. Sign in with your @elon.edu email.
+          Free for Elon students. Sign in with your @elon.edu email.
         </motion.p>
 
         {/* ── the phone lift ── */}
@@ -158,7 +163,7 @@ export function Hero() {
           style={{ perspective: 1300 }}
         >
           <motion.div style={{ rotateX, scale, transformOrigin: "top center" }}>
-            <PhoneFrame priority className="w-[290px] md:w-[340px]" />
+            <PhoneFrame className="w-[290px] md:w-[340px]" />
           </motion.div>
 
           {/* floating notifications, hidden on small screens */}
@@ -167,17 +172,15 @@ export function Hero() {
             className="absolute top-16 left-1/2 hidden -ml-[27rem] lg:block"
           >
             <div
-              className="animate-float w-64 rounded-2xl border border-white/10 bg-white/6 p-4 text-left shadow-2xl backdrop-blur-md"
+              className="animate-float w-64 rounded-2xl border border-line bg-[var(--glass)] p-4 text-left shadow-lift backdrop-blur-md"
               style={{ animationDuration: "7s" }}
             >
-              <p className="flex items-center gap-1.5 font-mono text-[10px] tracking-[0.18em] text-gold uppercase">
-                <PinMark className="h-3 w-3" /> Quad · now
+              <p className="flex items-center gap-1.5 text-[11px] font-semibold tracking-[0.12em] text-cobalt uppercase">
+                onby · in 1 hour
               </p>
-              <p className="mt-2 text-sm font-semibold">
-                Women&apos;s Soccer vs. Towson
-              </p>
-              <p className="mt-0.5 text-xs text-muted-foreground">
-                Starts in 1 hour · Rudd Field
+              <p className="mt-2 text-sm font-semibold">Hack night</p>
+              <p className="mt-0.5 text-xs text-ink-soft">
+                Elon Society of Computing · Innovation Hall
               </p>
             </div>
           </motion.div>
@@ -187,18 +190,18 @@ export function Hero() {
             className="absolute top-40 left-1/2 hidden ml-[13rem] lg:block"
           >
             <div
-              className="animate-float w-56 rounded-2xl border border-pin/30 bg-night/80 p-4 text-left shadow-2xl backdrop-blur-md"
+              className="animate-float w-56 rounded-2xl border border-coral/40 bg-[var(--glass)] p-4 text-left shadow-lift backdrop-blur-md"
               style={{ animationDuration: "9s", animationDelay: "1.2s" }}
             >
-              <p className="flex items-center gap-2 font-mono text-[10px] tracking-[0.18em] text-pin uppercase">
+              <p className="flex items-center gap-2 text-[11px] font-semibold tracking-[0.12em] text-coral uppercase">
                 <span className="relative flex h-2 w-2">
-                  <span className="animate-ping-slow absolute inline-flex h-full w-full rounded-full bg-pin" />
-                  <span className="relative inline-flex h-2 w-2 rounded-full bg-pin" />
+                  <span className="animate-ping-slow absolute inline-flex h-full w-full rounded-full bg-coral" />
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-coral" />
                 </span>
                 Live now
               </p>
-              <p className="mt-2 text-sm font-semibold">Open Mic Night</p>
-              <p className="mt-0.5 text-xs text-muted-foreground">
+              <p className="mt-2 text-sm font-semibold">Open mic night</p>
+              <p className="mt-0.5 text-xs text-ink-soft">
                 Oak House · ends 9:00 PM
               </p>
             </div>
@@ -209,17 +212,15 @@ export function Hero() {
             className="absolute bottom-56 left-1/2 hidden ml-[15rem] lg:block"
           >
             <div
-              className="animate-float w-60 rounded-2xl border border-white/10 bg-white/6 p-4 text-left shadow-2xl backdrop-blur-md"
+              className="animate-float w-60 rounded-2xl border border-line bg-[var(--glass)] p-4 text-left shadow-lift backdrop-blur-md"
               style={{ animationDuration: "8s", animationDelay: "0.6s" }}
             >
-              <p className="text-sm font-semibold">
-                Fall Musical: Into the Woods
+              <p className="text-sm font-semibold">Sunrise run</p>
+              <p className="mt-0.5 text-xs text-ink-soft">
+                ElonRUNS · Tomorrow 6:30 AM
               </p>
-              <p className="mt-0.5 text-xs text-muted-foreground">
-                McCrary Theatre · Fri 7:30 PM
-              </p>
-              <span className="mt-3 inline-flex items-center gap-1 rounded-full bg-pin px-3 py-1 text-xs font-semibold text-white">
-                I&apos;m going ✓
+              <span className="mt-3 inline-flex items-center gap-1.5 rounded-full bg-cobalt-soft px-3 py-1 text-xs font-semibold text-cobalt">
+                <Bookmark className="size-3 fill-current" /> Saved · reminder set
               </span>
             </div>
           </motion.div>

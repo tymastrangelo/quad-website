@@ -1,28 +1,33 @@
 import type { Metadata, Viewport } from "next";
-import { Space_Mono } from "next/font/google";
+import { Nunito } from "next/font/google";
 import "./globals.css";
 
-const spaceMono = Space_Mono({
-  variable: "--font-space-mono",
-  weight: ["400", "700"],
+// Web fallback for the app's rounded display face (SF Pro Rounded on Apple).
+const nunito = Nunito({
+  variable: "--font-nunito",
+  weight: ["700", "800", "900"],
   subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Quad | Campus happens here",
+  title: "onby | Everything happening on campus",
   description:
-    "Quad puts Elon's club events in one feed and on a live campus map. See what's happening now, say you're going in one tap. Free for students with an @elon.edu email.",
+    "onby puts your campus's events and organizations in one feed built around you. Save what you want to catch, get a nudge before it starts, and come on by. Starting at Elon University, spring 2027.",
   openGraph: {
-    title: "Quad | Campus happens here",
+    title: "onby | Everything happening on campus. Come on by.",
     description:
-      "Elon's club events in one feed and on a live campus map, built for students.",
+      "Your campus's events and organizations in one feed built around you. Starting at Elon University, spring 2027.",
     type: "website",
-    images: ["/quad-icon.png"],
+    images: ["/onby-icon.png"],
   },
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0a0406",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#f6f4f0" },
+    { media: "(prefers-color-scheme: dark)", color: "#000000" },
+  ],
 };
 
 export default function RootLayout({
@@ -31,7 +36,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${spaceMono.variable} h-full`}>
+    <html lang="en" className={`${nunito.variable} h-full`}>
       <body className="grain min-h-full font-sans">{children}</body>
     </html>
   );

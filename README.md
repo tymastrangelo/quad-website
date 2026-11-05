@@ -1,6 +1,6 @@
-# Quad Landing Site
+# onby Landing Site
 
-Marketing site for **Quad**, the campus events app for Elon University. Every event, every club, one app.
+Marketing site for **onby**, the campus events app. Everything happening on campus. Come on by. Starting at Elon University, spring 2027.
 
 Built with Next.js (App Router), Tailwind CSS v4, shadcn/ui, and Motion. Fully static: no backend, no env vars.
 
@@ -21,11 +21,11 @@ Deploy anywhere that hosts Next.js (Vercel is zero-config).
 
 ## Layout
 
-- `app/`: root layout (fonts, metadata, theme) and the single page
-- `components/site/`: one file per page section (hero, ticker, showcase, FAQ, …)
+- `app/`: root layout (fonts, metadata, theme), the single page, and `/privacy` + `/terms`
+- `components/site/`: one file per page section (hero, ticker, showcase, orgs, FAQ, …)
 - `components/ui/`: shadcn/ui primitives
-- `public/`: served assets, including the real app screenshot shown in the hero phone
-- `assets/`: source imagery (app icon, screenshots)
+- `public/`: served assets (app icon, store badges)
+- `assets/`: source imagery (onby icon and splash; the old Quad art under `images/quad/`)
 - `_legacy-template/`: the original static HTML template this site replaced (kept for reference)
 
-Design tokens (maroon/pin/gold palette, fonts, animations) live in `app/globals.css`. See `CLAUDE.md` for working conventions.
+Design tokens (warm canvas, cobalt accent, coral dot, rounded display face, dark mode) live in `app/globals.css`. See `CLAUDE.md` for working conventions.

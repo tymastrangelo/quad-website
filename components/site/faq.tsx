@@ -9,32 +9,36 @@ import { SectionHeading } from "./section-heading";
 
 const FAQS = [
   {
-    q: "Who can use Quad?",
-    a: "Anyone with an @elon.edu email address: students, faculty, and staff. Signup is verified on the server, so the community stays genuinely Elon only.",
+    q: "Who can use onby?",
+    a: "Anyone with an @elon.edu email address. Signup is verified on the server, so the community stays genuinely Elon only. Other schools come later, and Elon stays first.",
   },
   {
     q: "Does it cost anything?",
-    a: "No. Quad is free for everyone on campus. No ads, no premium tier, no catch.",
+    a: "No. onby is free for everyone on campus. No ads, no premium tier, no catch.",
   },
   {
-    q: "How does my organization get on Quad?",
-    a: "Your org needs to be registered with Student Involvement on PhoenixConnect first. From there, submit it through the form inside Quad and it goes to the approval queue. Once approved, you get a club page, event and post publishing, and member management.",
+    q: "Does onby replace PhoenixCONNECT?",
+    a: "No. PhoenixCONNECT stays the place where organizations register, post events and take registrations. onby only does the finding: it reads the public events orgs already posted, never writes anything back, and every event links to PhoenixCONNECT.",
   },
   {
-    q: "Why do I only see some clubs?",
-    a: "Fall 2026 is Quad's pilot semester. Student Involvement is starting with a preapproved set of organizations so it can measure the app's impact on campus. If students show up, use it, and advocate for it, Quad has the chance to open to every club at Elon in the spring and beyond. Nothing is guaranteed, which is exactly why your support matters.",
+    q: "How does my organization get on onby?",
+    a: "There is nothing to set up. If your org posts public events on PhoenixCONNECT and is part of the pilot, they show up in onby on their own. onby does not take event submissions, and it does not ask orgs to post twice.",
+  },
+  {
+    q: "Why do I only see some orgs?",
+    a: "Spring 2027 is onby's pilot semester at Elon. It starts with a set of approved organizations so its impact can be measured through the spring. Everything else is on PhoenixCONNECT, one tap away, and the list can grow from there.",
   },
   {
     q: "Will it blow up my notifications?",
-    a: "Only if you want it to. Every notification type has its own toggle, quiet hours are enforced on the server, and event reminders only fire for events you said you're going to.",
+    a: "Only if you want it to. Every notification type has its own toggle, quiet hours are enforced on the server, event reminders only fire for events you saved, and the daily digest is opt in.",
   },
   {
     q: "What about my privacy?",
-    a: "Quad is a closed community: no public web profiles, no anonymous browsing of your data. You can block users, control what you share, and delete your account, along with everything it knows about you, from inside the app.",
+    a: "onby receives only public event and organization information, the same things already visible on PhoenixCONNECT. No rosters, no memberships, no attendance. What you save stays in onby. You can block people and delete your account, along with everything it knows about you, from inside the app.",
   },
   {
     q: "Where can I get it?",
-    a: "Quad is on the App Store for iPhone and Google Play for Android.",
+    a: "onby comes to the App Store and Google Play for the spring 2027 start. Check back here, or follow an org that will tell you.",
   },
 ];
 
@@ -43,13 +47,17 @@ export function Faq() {
     <section id="faq" className="mx-auto max-w-3xl scroll-mt-24 px-6 pb-28 md:pb-36">
       <SectionHeading eyebrow="Questions" title="Asked and answered" />
       <Reveal delay={0.1}>
-        <Accordion type="single" collapsible className="mt-12">
+        <Accordion
+          type="single"
+          collapsible
+          className="mt-12 rounded-[28px] border border-line bg-surface px-6 shadow-soft"
+        >
           {FAQS.map((faq) => (
             <AccordionItem key={faq.q} value={faq.q}>
-              <AccordionTrigger className="text-left font-display text-base font-semibold hover:no-underline md:text-lg">
+              <AccordionTrigger className="text-left font-display text-base font-extrabold tracking-tight hover:no-underline md:text-lg">
                 {faq.q}
               </AccordionTrigger>
-              <AccordionContent className="text-sm leading-relaxed text-muted-foreground md:text-base">
+              <AccordionContent className="text-sm leading-relaxed text-ink-soft md:text-base">
                 {faq.a}
               </AccordionContent>
             </AccordionItem>

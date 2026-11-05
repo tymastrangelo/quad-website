@@ -3,7 +3,8 @@
 import { useEffect, useState } from "react";
 
 /* Neither store listing is live yet, so both badges pop a
-   "coming soon" bubble instead of linking out. */
+   "coming soon" bubble instead of linking out. When a listing goes
+   live, swap that badge back to an <a> with the real URL. */
 function ComingSoonBadge({ src, alt }: { src: string; alt: string }) {
   const [pressed, setPressed] = useState(false);
 
@@ -18,16 +19,16 @@ function ComingSoonBadge({ src, alt }: { src: string; alt: string }) {
       {pressed && (
         <span
           role="status"
-          className="animate-in fade-in slide-in-from-bottom-1 pointer-events-none absolute -top-10 left-1/2 -translate-x-1/2 rounded-full border border-gold/30 bg-night px-4 py-1.5 font-mono text-[10px] tracking-[0.18em] whitespace-nowrap text-gold uppercase"
+          className="animate-in fade-in slide-in-from-bottom-1 pointer-events-none absolute -top-11 left-1/2 -translate-x-1/2 rounded-full bg-ink px-4 py-1.5 text-xs font-semibold whitespace-nowrap text-canvas shadow-soft"
         >
-          Coming soon
+          Spring 2027
         </span>
       )}
       <button
         type="button"
         onClick={() => setPressed(true)}
-        aria-label={`${alt}, coming soon`}
-        className="cursor-pointer rounded-lg transition-opacity hover:opacity-80"
+        aria-label={`${alt}, coming spring 2027`}
+        className="cursor-pointer rounded-lg transition-[opacity,transform] hover:opacity-85 active:scale-[0.97]"
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src={src} alt={alt} className="h-13 w-auto" />
