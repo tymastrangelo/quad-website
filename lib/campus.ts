@@ -16,7 +16,6 @@ export type Campus = {
   screenshotAlt: string;
   where: string;
   lead: string;
-  signIn: string;
   does: { title: string; body: string }[];
   also: string[];
   orgs: { heading: string; body: string; pilot: string };
@@ -32,13 +31,12 @@ const onby: Campus = {
   toggle: "onby",
   title: "onby | Everything happening on campus",
   description:
-    "onby shows you what your orgs are doing this week and reminds you before it starts. One campus at a time, starting spring 2027.",
+    "onby shows you what your orgs are doing this week and reminds you before it starts. One campus at a time.",
   screenshot: "/screens/onby-home.png",
   screenshotAlt:
     "The onby Home tab: a live event happening now, what’s up next for you, and today’s events from the orgs you follow",
-  where: "Any campus. Starting spring 2027.",
-  lead: "onby shows you what your orgs are doing this week and reminds you before it starts. That’s the whole idea.",
-  signIn: "Free. Sign in with your school email.",
+  where: "Any campus.",
+  lead: "onby shows you what your orgs are doing this week and reminds you before it starts.",
   does: [
     {
       title: "A feed of your orgs",
@@ -64,13 +62,13 @@ const onby: Campus = {
   orgs: {
     heading: "If you run an org",
     body: "You don’t have to do anything. Keep posting events where you already do. Students who follow you see them in onby, with a reminder before they start, and every event links back to your page. If you’d rather not be in it, tell me and your org is out the same day.",
-    pilot: "onby launches one campus at a time, starting spring 2027. If you want it at yours, find your school below and leave your email.",
+    pilot: "onby launches one campus at a time. If you want it at yours, find your school below and leave your email.",
   },
   steps: ["Sign in with your school email.", "Follow a few orgs.", "Show up."],
   faq: [
     {
       q: "Which campuses is onby on?",
-      a: "One at a time, starting spring 2027. Search for your school above. If it isn’t there yet, leave your school email and I’ll get in touch.",
+      a: "One at a time. Search for your school above. If it isn’t there yet, leave your school email and I’ll get in touch.",
     },
     {
       q: "Who can use it?",
@@ -95,11 +93,11 @@ const onby: Campus = {
     },
     {
       q: "Where do I get it?",
-      a: "App Store and Google Play, when your campus launches. Check back here.",
+      a: "App Store and Google Play, once your campus is on onby.",
     },
   ],
   cta: {
-    body: "Free, on iPhone and Android, starting spring 2027.",
+    body: "Free, on iPhone and Android.",
     fine: "One campus at a time",
   },
   footer: {
@@ -116,13 +114,12 @@ const elon: Campus = {
   navSuffix: "for Elon",
   title: "onby for Elon | Everything happening on campus",
   description:
-    "onby pulls your orgs’ PhoenixCONNECT events into one feed and reminds you before they start. Spring 2027 pilot at Elon.",
+    "onby pulls your orgs’ PhoenixCONNECT events into one feed and reminds you before they start.",
   screenshot: "/screens/elon-home.png",
   screenshotAlt:
     "The onby Home tab for Elon in Elon’s colors: Research Help Desk live at Belk Library, Men’s Basketball vs UNCG up next at Schar Center, and today’s events",
-  where: "Elon University. Spring 2027.",
-  lead: "onby pulls your orgs’ PhoenixCONNECT events into one feed and reminds you before they start. That’s the whole idea.",
-  signIn: "Free. Sign in with your @elon.edu email.",
+  where: "Elon University.",
+  lead: "onby pulls your orgs’ PhoenixCONNECT events into one feed and reminds you before they start.",
   does: [
     {
       title: "A feed of your orgs",
@@ -148,7 +145,7 @@ const elon: Campus = {
   orgs: {
     heading: "If you run an org",
     body: "You don’t have to do anything. Keep posting events on PhoenixCONNECT like you already do. Students who follow you see them in onby, with a reminder before they start, and every event links back to your PhoenixCONNECT page. If you’d rather not be in it, tell me and your org is out the same day.",
-    pilot: "This spring onby starts at Elon with a set of approved organizations while I measure how it goes. Everything else is on PhoenixCONNECT, one tap away, and the list can grow from there.",
+    pilot: "onby starts at Elon with a set of approved organizations. Everything else is on PhoenixCONNECT, one tap away, and the list can grow from there.",
   },
   steps: ["Sign in with your @elon.edu email.", "Follow a few orgs.", "Show up."],
   faq: [
@@ -167,7 +164,7 @@ const elon: Campus = {
     },
     {
       q: "Why do I only see some orgs?",
-      a: "Spring 2027 is a pilot. It starts with a set of approved organizations so I can measure how it goes. Everything else is on PhoenixCONNECT, one tap away, and the list can grow from there.",
+      a: "onby starts with a set of approved organizations so I can measure how it goes. Everything else is on PhoenixCONNECT, one tap away, and the list can grow from there.",
     },
     {
       q: "Will it spam me?",
@@ -179,11 +176,11 @@ const elon: Campus = {
     },
     {
       q: "Where do I get it?",
-      a: "App Store and Google Play for the spring 2027 start. Check back here, or an org you follow will tell you.",
+      a: "App Store and Google Play.",
     },
   ],
   cta: {
-    body: "Free, on iPhone and Android, spring 2027.",
+    body: "Free, on iPhone and Android.",
     fine: "Elon University",
   },
   footer: {

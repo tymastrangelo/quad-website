@@ -14,11 +14,11 @@ const nunito = Nunito({
 export const metadata: Metadata = {
   title: "onby | Everything happening on campus",
   description:
-    "onby puts your campus's events and organizations in one feed built around you. Save what you want to catch, get a nudge before it starts, and come on by. One campus at a time, starting spring 2027.",
+    "onby puts your campus's events and organizations in one feed built around you. Save what you want to catch, get a nudge before it starts, and come on by.",
   openGraph: {
     title: "onby | Everything happening on campus. Come on by.",
     description:
-      "Your campus's events and organizations in one feed built around you. One campus at a time, starting spring 2027.",
+      "Your campus's events and organizations in one feed built around you.",
     type: "website",
     images: ["/onby-icon.png"],
   },

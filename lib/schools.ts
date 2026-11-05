@@ -8,7 +8,7 @@ export type School = { name: string; country: string; state: string; domain: str
 
 /* Campuses onby runs on, by email domain. Add a row when one launches. */
 export const LIVE: Record<string, { path: string; note: string; short: string }> = {
-  "elon.edu": { path: "/elon", note: "Spring 2027 pilot", short: "Elon" },
+  "elon.edu": { path: "/elon", note: "Pilot campus", short: "Elon" },
 };
 
 export const REQUEST_ENDPOINT =

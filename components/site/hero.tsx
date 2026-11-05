@@ -62,7 +62,7 @@ export function Hero({ campus }: { campus: Campus }) {
           <motion.p {...enter(0.3)} className="mt-5 max-w-md text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
             {campus.lead}
           </motion.p>
-          <motion.div {...enter(0.4)} data-hero-cta className="mt-8 flex w-full flex-col items-start gap-2 sm:w-auto">
+          <motion.div {...enter(0.4)} data-hero-cta className="mt-8 flex w-full flex-col items-start sm:w-auto">
             <Button
               asChild
               size="lg"
@@ -70,7 +70,6 @@ export function Hero({ campus }: { campus: Campus }) {
             >
               <a href="#download">Get the app</a>
             </Button>
-            <p className="text-sm text-ink-soft">{campus.signIn}</p>
           </motion.div>
         </div>
 
