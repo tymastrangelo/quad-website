@@ -6,7 +6,7 @@ export function Steps({ campus }: { campus: Campus }) {
     <section className="mx-auto max-w-6xl px-6 py-20 md:py-32">
       <div className="grid gap-8 md:grid-cols-[1fr_2fr] md:gap-16">
         <Reveal>
-          <h2 className="font-display text-3xl font-extrabold tracking-tight md:text-5xl">Getting in</h2>
+          <h2 className="font-display text-3xl leading-[1.1] font-extrabold tracking-[-0.02em] md:text-5xl">Getting in</h2>
         </Reveal>
         <Reveal delay={0.08}>
           <ol className="flex flex-col divide-y divide-line">

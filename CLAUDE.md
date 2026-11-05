@@ -28,7 +28,8 @@ Next.js 16 (App Router) · TypeScript · Tailwind CSS v4 · shadcn/ui (radix-ui 
 
 ## Not a template (Tyler, 2026-11-05: "de-AI the entire site")
 - No uppercase tracked labels above headings, no centered heading-plus-subline on every section, no icon-in-tinted-square tiles, no glass notification cards, no marquee, no ripple rings or glows, no grain, no accordion FAQ. Sections are left-aligned, sentence case, mostly text with hairlines: What it does (three things + a plain list), If you run an org, Getting in, Your school, Questions (visible Q&A), Get onby.
-- The one flourish is the hero phone lift with the real screenshot. Don't add decoration back; add specifics instead.
+- The hero is two columns on desktop: headline, lead, one button on the left; the real screenshot in a phone on the right, with a 100ms staged entrance and a small cursor tilt. That is the only flourish. Don't add decoration back; add specifics instead.
+- Installed craft skills to apply on any change here: `better-typography`, `better-layout`, `better-colors`, `better-ui`, `better-writing`, `baseline-ui` (exact values: press scale 0.96 over 150ms, headings tracking -0.02em at 24px+, body line-height 1.5 to 1.6, measure 60 to 75ch, `text-balance` headings and `text-pretty` paragraphs, curly quotes in copy, no gradients or glow, one accent).
 - Copy is Tyler's voice: first person, plain, short, concrete. Headlines say what the section is ("What it does"), not a slogan.
 
 ## Design system (all tokens in `app/globals.css`, mirrors the app's `lib/palette.ts`)

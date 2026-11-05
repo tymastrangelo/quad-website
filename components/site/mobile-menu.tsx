@@ -37,7 +37,7 @@ export function MobileMenu({ links }: { links: { href: string; label: string }[]
         aria-expanded={open}
         aria-controls={panelId}
         onClick={() => setOpen((v) => !v)}
-        className="flex size-10 items-center justify-center rounded-full bg-surface-2 text-ink transition-colors hover:bg-line active:scale-[0.97]"
+        className="flex size-10 items-center justify-center rounded-full bg-surface-2 text-ink transition-colors hover:bg-line enabled:active:scale-[0.96]"
       >
         {open ? <X className="size-5" aria-hidden="true" /> : <Menu className="size-5" aria-hidden="true" />}
       </button>

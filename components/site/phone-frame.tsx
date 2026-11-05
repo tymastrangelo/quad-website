@@ -23,7 +23,7 @@ export function PhoneFrame({
 }) {
   return (
     <div className={cn("relative w-[300px] select-none", className)}>
-      <div className="rounded-[3.2rem] border border-[var(--phone-rim)] bg-[var(--phone-bezel)] p-[9px] shadow-[0_60px_140px_-30px_var(--glow),0_40px_80px_-40px_rgba(0,0,0,0.45)]">
+      <div className="rounded-[3.2rem] border border-[var(--phone-rim)] bg-[var(--phone-bezel)] p-[9px] shadow-[0_24px_48px_-16px_rgba(28,28,30,0.35),0_2px_6px_rgba(28,28,30,0.12)]">
         <div className="relative aspect-1206/2622 overflow-hidden rounded-[2.6rem] bg-black">
           {screens.map((screen) => (
             <Image

@@ -12,7 +12,7 @@ export function Showcase({ campus }: { campus: Campus }) {
           <Reveal key={item.title} delay={i * 0.08}>
             <div className="flex flex-col gap-3 border-t border-line pt-5">
               <h3 className="font-display text-xl font-extrabold tracking-tight md:text-2xl">{item.title}</h3>
-              <p className="text-base leading-relaxed text-ink-soft">{item.body}</p>
+              <p className="text-base leading-relaxed text-pretty text-ink-soft">{item.body}</p>
             </div>
           </Reveal>
         ))}

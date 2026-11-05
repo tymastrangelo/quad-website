@@ -7,7 +7,7 @@ export function Cta({ campus }: { campus: Campus }) {
     <section id="download" className="scroll-mt-24 bg-surface">
       <Reveal className="mx-auto flex max-w-6xl flex-col items-start gap-6 px-6 py-20 md:flex-row md:items-center md:justify-between md:py-28">
         <div className="max-w-xl">
-          <h2 className="font-display text-3xl font-extrabold tracking-tight md:text-5xl">
+          <h2 className="font-display text-3xl leading-[1.1] font-extrabold tracking-[-0.02em] md:text-5xl">
             Get onby<span className="text-coral">.</span>
           </h2>
           <p className="mt-3 text-lg text-ink-soft">{campus.cta.body}</p>

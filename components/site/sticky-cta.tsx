@@ -45,7 +45,7 @@ export function StickyCta({ campus }: { campus: Campus }) {
         </div>
         <Button
           asChild
-          className="h-11 shrink-0 rounded-full bg-brand px-5 font-semibold text-white hover:bg-brand-deep active:scale-[0.97]"
+          className="h-11 shrink-0 rounded-full bg-brand px-5 font-semibold text-white hover:bg-brand-deep enabled:active:scale-[0.96]"
         >
           <a href="#download" tabIndex={show ? 0 : -1}>
             <Download data-slot="icon" />

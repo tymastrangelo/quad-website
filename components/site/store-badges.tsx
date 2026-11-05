@@ -28,7 +28,7 @@ function ComingSoonBadge({ src, alt }: { src: string; alt: string }) {
         type="button"
         onClick={() => setPressed(true)}
         aria-label={`${alt}, coming spring 2027`}
-        className="cursor-pointer rounded-lg transition-[opacity,transform] hover:opacity-85 active:scale-[0.97]"
+        className="cursor-pointer rounded-lg transition-[opacity,transform] hover:opacity-85 enabled:active:scale-[0.96]"
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src={src} alt={alt} className="h-13 w-auto" />

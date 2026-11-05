@@ -1,5 +1,5 @@
 /* Two faces of one site. "onby" is the app for any campus, in onby cobalt.
-   "elon" is onby for Elon, in Elon's color, the way the app swaps its tint
+   "elon" is onby for Elon, in Elon’s color, the way the app swaps its tint
    per school. Every section reads its copy from here; nothing campus
    specific lives in a component. Voice: Tyler, first person, plain. */
 
@@ -35,18 +35,18 @@ const onby: Campus = {
     "onby shows you what your orgs are doing this week and reminds you before it starts. One campus at a time, starting spring 2027.",
   screenshot: "/screens/onby-home.png",
   screenshotAlt:
-    "The onby Home tab: a live event happening now, what's up next for you, and today's events from the orgs you follow",
+    "The onby Home tab: a live event happening now, what’s up next for you, and today’s events from the orgs you follow",
   where: "Any campus. Starting spring 2027.",
-  lead: "onby shows you what your orgs are doing this week and reminds you before it starts. That's the whole idea.",
+  lead: "onby shows you what your orgs are doing this week and reminds you before it starts. That’s the whole idea.",
   signIn: "Free. Sign in with your school email.",
   does: [
     {
       title: "A feed of your orgs",
-      body: "Follow the orgs you care about and their events come to you, soonest first. Nothing from orgs you don't follow.",
+      body: "Follow the orgs you care about and their events come to you, soonest first. Nothing from orgs you don’t follow.",
     },
     {
       title: "Reminders you set yourself",
-      body: "Save an event and you get a nudge before it starts. Turn on the morning digest if you want one note a day with what's on.",
+      body: "Save an event and you get a nudge before it starts. Turn on the morning digest if you want one note a day with what’s on.",
     },
     {
       title: "A map of where things are",
@@ -54,7 +54,7 @@ const onby: Campus = {
     },
   ],
   also: [
-    "Say I'm going and see who else is in.",
+    "Say I’m going and see who else is in.",
     "Send any event to your calendar.",
     "Invite a friend to an event from inside the app.",
     "Choose which notifications you get, with quiet hours enforced on the server.",
@@ -63,14 +63,14 @@ const onby: Campus = {
   ],
   orgs: {
     heading: "If you run an org",
-    body: "You don't have to do anything. Keep posting events where you already do. Students who follow you see them in onby, with a reminder before they start, and every event links back to your page. If you'd rather not be in it, tell me and your org is out the same day.",
+    body: "You don’t have to do anything. Keep posting events where you already do. Students who follow you see them in onby, with a reminder before they start, and every event links back to your page. If you’d rather not be in it, tell me and your org is out the same day.",
     pilot: "onby launches one campus at a time, starting spring 2027. If you want it at yours, find your school below and leave your email.",
   },
   steps: ["Sign in with your school email.", "Follow a few orgs.", "Show up."],
   faq: [
     {
       q: "Which campuses is onby on?",
-      a: "One at a time, starting spring 2027. Search for your school above. If it isn't there yet, leave your school email and I'll get in touch.",
+      a: "One at a time, starting spring 2027. Search for your school above. If it isn’t there yet, leave your school email and I’ll get in touch.",
     },
     {
       q: "Who can use it?",
@@ -79,11 +79,11 @@ const onby: Campus = {
     { q: "Does it cost anything?", a: "No. No ads, no paid tier." },
     {
       q: "Does it replace what my school already uses?",
-      a: "No. Your school's events system is still where orgs register, post events and take sign-ups. onby reads the public events, never writes anything back, and links to the original every time.",
+      a: "No. Your school’s events system is still where orgs register, post events and take sign-ups. onby reads the public events, never writes anything back, and links to the original every time.",
     },
     {
       q: "How does my org get on it?",
-      a: "There's nothing to set up. If your org posts public events in your school's system and your campus is on onby, they show up. I don't take event submissions and I won't ask you to post twice.",
+      a: "There’s nothing to set up. If your org posts public events in your school’s system and your campus is on onby, they show up. I don’t take event submissions and I won’t ask you to post twice.",
     },
     {
       q: "Will it spam me?",
@@ -116,21 +116,21 @@ const elon: Campus = {
   navSuffix: "for Elon",
   title: "onby for Elon | Everything happening on campus",
   description:
-    "onby pulls your orgs' PhoenixCONNECT events into one feed and reminds you before they start. Spring 2027 pilot at Elon.",
+    "onby pulls your orgs’ PhoenixCONNECT events into one feed and reminds you before they start. Spring 2027 pilot at Elon.",
   screenshot: "/screens/elon-home.png",
   screenshotAlt:
-    "The onby Home tab for Elon in Elon's colors: Research Help Desk live at Belk Library, Men's Basketball vs UNCG up next at Schar Center, and today's events",
+    "The onby Home tab for Elon in Elon’s colors: Research Help Desk live at Belk Library, Men’s Basketball vs UNCG up next at Schar Center, and today’s events",
   where: "Elon University. Spring 2027.",
-  lead: "onby pulls your orgs' PhoenixCONNECT events into one feed and reminds you before they start. That's the whole idea.",
+  lead: "onby pulls your orgs’ PhoenixCONNECT events into one feed and reminds you before they start. That’s the whole idea.",
   signIn: "Free. Sign in with your @elon.edu email.",
   does: [
     {
       title: "A feed of your orgs",
-      body: "Follow the orgs you care about and their PhoenixCONNECT events come to you, soonest first. Nothing from orgs you don't follow.",
+      body: "Follow the orgs you care about and their PhoenixCONNECT events come to you, soonest first. Nothing from orgs you don’t follow.",
     },
     {
       title: "Reminders you set yourself",
-      body: "Save an event and you get a nudge before it starts. Turn on the morning digest if you want one note a day with what's on at Elon.",
+      body: "Save an event and you get a nudge before it starts. Turn on the morning digest if you want one note a day with what’s on at Elon.",
     },
     {
       title: "A map of where things are",
@@ -138,7 +138,7 @@ const elon: Campus = {
     },
   ],
   also: [
-    "Say I'm going and see who else is in.",
+    "Say I’m going and see who else is in.",
     "Send any event to your calendar.",
     "Invite a friend to an event from inside the app.",
     "Choose which notifications you get, with quiet hours enforced on the server.",
@@ -147,7 +147,7 @@ const elon: Campus = {
   ],
   orgs: {
     heading: "If you run an org",
-    body: "You don't have to do anything. Keep posting events on PhoenixCONNECT like you already do. Students who follow you see them in onby, with a reminder before they start, and every event links back to your PhoenixCONNECT page. If you'd rather not be in it, tell me and your org is out the same day.",
+    body: "You don’t have to do anything. Keep posting events on PhoenixCONNECT like you already do. Students who follow you see them in onby, with a reminder before they start, and every event links back to your PhoenixCONNECT page. If you’d rather not be in it, tell me and your org is out the same day.",
     pilot: "This spring onby starts at Elon with a set of approved organizations while I measure how it goes. Everything else is on PhoenixCONNECT, one tap away, and the list can grow from there.",
   },
   steps: ["Sign in with your @elon.edu email.", "Follow a few orgs.", "Show up."],
@@ -163,7 +163,7 @@ const elon: Campus = {
     },
     {
       q: "How does my org get on it?",
-      a: "There's nothing to set up. If your org posts public events on PhoenixCONNECT and is part of the pilot, they show up. I don't take event submissions and I won't ask you to post twice.",
+      a: "There’s nothing to set up. If your org posts public events on PhoenixCONNECT and is part of the pilot, they show up. I don’t take event submissions and I won’t ask you to post twice.",
     },
     {
       q: "Why do I only see some orgs?",

@@ -43,7 +43,7 @@ export function Navbar({
         <div className="hidden justify-end md:flex">
           <Button
             asChild
-            className="rounded-full bg-brand px-5 font-semibold text-white transition-transform hover:bg-brand-deep active:scale-[0.97]"
+            className="rounded-full bg-brand px-5 font-semibold text-white transition-[background-color,scale] duration-150 ease-out hover:bg-brand-deep enabled:active:scale-[0.96]"
           >
             <a href="#download">
               <Download data-slot="icon" />

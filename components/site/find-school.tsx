@@ -212,7 +212,7 @@ export function FindSchool() {
                   >
                     {isOther ? (
                       <span className="text-ink-soft">
-                        Other: my school isn&apos;t listed
+                        Other: my school isn’t listed
                       </span>
                     ) : (
                       <span className="min-w-0">
@@ -265,13 +265,13 @@ export function FindSchool() {
                 {pick.kind === "other" ? "Tell me where" : `Not yet at ${pick.school.name}`}
               </p>
               <p className="mt-1 text-sm text-ink-soft">
-                Leave your school email and I&apos;ll get in touch about bringing onby to {pickedName}. One
+                Leave your school email and I’ll get in touch about bringing onby to {pickedName}. One
                 email, no list.
               </p>
 
               {status === "sent" ? (
                 <p role="status" className="mt-4 rounded-full bg-brand-soft px-4 py-2.5 text-sm font-semibold text-brand">
-                  Got it. I&apos;ll reach out to {email.trim()}.
+                  Got it. I’ll reach out to {email.trim()}.
                 </p>
               ) : (
                 <div className="mt-4 flex flex-col gap-2">
@@ -330,7 +330,7 @@ export function FindSchool() {
               )}
               {status === "error" && (
                 <p role="alert" className="mt-3 text-sm text-ink-soft">
-                  That didn&apos;t go through. Email{" "}
+                  That didn’t go through. Email{" "}
                   <a href="mailto:tmastrangelo@elon.edu" className="font-medium text-brand hover:underline">
                     tmastrangelo@elon.edu
                   </a>{" "}
@@ -342,7 +342,7 @@ export function FindSchool() {
 
           {loadError && !pick && (
             <p className="mt-3 px-4 text-sm text-ink-soft">
-              The school list didn&apos;t load. Type your school and pick &ldquo;Other&rdquo; to continue.
+              The school list didn’t load. Type your school and pick &ldquo;Other&rdquo; to continue.
             </p>
           )}
         </div>
