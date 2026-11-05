@@ -131,7 +131,7 @@ export function FindSchool() {
     <section id="find" className="mx-auto max-w-6xl scroll-mt-24 px-6 py-20 md:py-32">
       <SectionHeading
         title="Is onby at your school yet?"
-        sub="Search for your campus and pick it from the list. If it's not there yet, leave your school email and I'll get in touch."
+        sub="Search for your school and pick it from the list. Not there yet? Leave your school email and I’ll reach out about bringing onby to your campus."
       />
       <Reveal delay={0.1}>
         <div ref={root} className="relative mt-8 max-w-2xl rounded-[28px] border border-line bg-surface p-3 shadow-soft">
@@ -265,8 +265,8 @@ export function FindSchool() {
                 {pick.kind === "other" ? "Tell me where" : `Not yet at ${pick.school.name}`}
               </p>
               <p className="mt-1 text-sm text-ink-soft">
-                Leave your school email and I’ll get in touch about bringing onby to {pickedName}. One
-                email, no list.
+                Leave your school email and I’ll reach out about bringing onby to {pickedName}, whether
+                it plugs into what you use now or runs on its own. One email, no list.
               </p>
 
               {status === "sent" ? (

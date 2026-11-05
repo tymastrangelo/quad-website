@@ -5,6 +5,7 @@ import { CAMPUSES, campusFromPath, type CampusKey } from "@/lib/campus";
 import { Cta } from "./cta";
 import { Faq } from "./faq";
 import { FindSchool } from "./find-school";
+import { Fit } from "./fit";
 import { Footer } from "./footer";
 import { ForOrgs } from "./for-orgs";
 import { Hero } from "./hero";
@@ -48,6 +49,7 @@ export function Landing({ initial }: { initial: CampusKey }) {
       <main>
         <Hero campus={campus} />
         <Showcase campus={campus} />
+        {campus.fit && <Fit fit={campus.fit} />}
         <ForOrgs campus={campus} />
         <Steps campus={campus} />
         {campus.key === "onby" && <FindSchool />}
