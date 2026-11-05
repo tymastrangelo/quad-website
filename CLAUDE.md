@@ -20,11 +20,16 @@ Next.js 16 (App Router) · TypeScript · Tailwind CSS v4 · shadcn/ui (radix-ui 
 - `app/layout.tsx`: fonts + metadata. Nunito (next/font) is only the web fallback for the rounded display face. `metadataBase` is unset until there's a real domain (harmless build warning).
 - `app/page.tsx`: assembles the sections in order; each section is one file in `components/site/`.
 - `app/privacy/page.tsx` + `app/terms/page.tsx`: legal pages on the shared primitives in `components/site/legal.tsx`. Product name is onby, legal entity stays Quad Software, LLC. The legal substance still describes posts, RSVPs and club admin tools from the Quad era; it is under review with the Elon Law clinic, so change wording only when Tyler hands over new text.
-- `components/site/`: Navbar, Hero (3D phone lift), Ticker, Showcase, FeatureGrid, ForOrgs, Steps, Faq, Cta, Footer, plus shared bits (`brand-mark.tsx`: `OnbyWordmark` + `Dot`, Reveal, SectionHeading, PhoneFrame, StoreBadges).
+- `components/site/`: Navbar (+ CampusMenu, MobileMenu), Hero (3D phone lift), Showcase ("What it does"), ForOrgs, Steps, FindSchool, Faq, Cta, Footer, StickyCta (phones), plus shared bits (`brand-mark.tsx`: `OnbyWordmark` + `Dot`, Reveal, SectionHeading, PhoneFrame, StoreBadges).
 - `components/site/phone-frame.tsx` renders the real screenshots (1206×2622 captures resampled to 1179 wide: `sips --resampleWidth 1179 <src> --out public/screens/<name>.png`).
 - `public/onby-icon.png`, `app/icon.png`, `app/apple-icon.png`: rendered from `assets/images/onby/icon.png` (copied from the app repo's `assets/icon.png`). Re-copy when the app icon changes.
 - `assets/images/quad/`: the old brand's art, reference only. `_legacy-template/`: the original HTML template, never import from it.
 - `DESIGN_GUIDE.md`: the site's design system. Keep it in sync with any visual change.
+
+## Not a template (Tyler, 2026-11-05: "de-AI the entire site")
+- No uppercase tracked labels above headings, no centered heading-plus-subline on every section, no icon-in-tinted-square tiles, no glass notification cards, no marquee, no ripple rings or glows, no grain, no accordion FAQ. Sections are left-aligned, sentence case, mostly text with hairlines: What it does (three things + a plain list), If you run an org, Getting in, Your school, Questions (visible Q&A), Get onby.
+- The one flourish is the hero phone lift with the real screenshot. Don't add decoration back; add specifics instead.
+- Copy is Tyler's voice: first person, plain, short, concrete. Headlines say what the section is ("What it does"), not a slogan.
 
 ## Design system (all tokens in `app/globals.css`, mirrors the app's `lib/palette.ts`)
 - Light first, dark follows `prefers-color-scheme`. Canvas `#F6F4F0` / black · surface white / `#1C1C1E` · surface-2 `#EFECE6` / `#2C2C2E` · ink `#1C1C1E` / `#F5F5F7` · ink-soft `#5C5C63` · line `#E8E4DC` · brand = onby cobalt `#2B5CFF` / `#5E82FF` (Elon maroon on `/elon`) · brand-soft · coral `#FF6A5C`. Use the Tailwind names (`bg-canvas`, `text-ink-soft`, `border-line`, `bg-brand`, `text-coral`, …), never raw hexes in components. The accent token is `brand`, not `cobalt`, because it changes per campus.
