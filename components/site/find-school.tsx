@@ -331,8 +331,8 @@ export function FindSchool() {
               {status === "error" && (
                 <p role="alert" className="mt-3 text-sm text-ink-soft">
                   That didn’t go through. Email{" "}
-                  <a href="mailto:tmastrangelo@elon.edu" className="font-medium text-brand hover:underline">
-                    tmastrangelo@elon.edu
+                  <a href="mailto:joinonby@gmail.com" className="font-medium text-brand hover:underline">
+                    joinonby@gmail.com
                   </a>{" "}
                   instead.
                 </p>

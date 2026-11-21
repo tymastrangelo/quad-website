@@ -83,10 +83,10 @@ export function Callout({ children }: { children: React.ReactNode }) {
 export function Mail() {
   return (
     <a
-      href="mailto:tmastrangelo@elon.edu"
+      href="mailto:joinonby@gmail.com"
       className="font-medium text-brand hover:underline"
     >
-      tmastrangelo@elon.edu
+      joinonby@gmail.com
     </a>
   );
 }

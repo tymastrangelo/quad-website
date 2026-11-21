@@ -15,7 +15,7 @@ const COLUMNS = [
   {
     heading: "Support",
     links: [
-      { label: "tmastrangelo@elon.edu", href: "mailto:tmastrangelo@elon.edu" },
+      { label: "joinonby@gmail.com", href: "mailto:joinonby@gmail.com" },
       { label: "Privacy policy", href: "/privacy" },
       { label: "Terms of service", href: "/terms" },
     ],

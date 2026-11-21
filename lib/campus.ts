@@ -97,7 +97,7 @@ const onby: Campus = {
     },
     {
       q: "I work at a school. How do we get started?",
-      a: "Find your school above and leave your email, or write to me at tmastrangelo@elon.edu. We’ll look at what you use today and decide together whether onby plugs into it or runs on its own.",
+      a: "Find your school above and leave your email, or write to me at joinonby@gmail.com. We’ll look at what you use today and decide together whether onby plugs into it or runs on its own.",
     },
     {
       q: "How does my org get on it?",
