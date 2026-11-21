@@ -22,7 +22,7 @@ export default function PrivacyPage() {
     <LegalPage
       title="onby Privacy Policy"
       effective="November 18, 2026"
-      updated="November 18, 2026"
+      updated="November 21, 2026"
     >
       <div className="flex flex-col gap-4">
         <P>
@@ -177,7 +177,10 @@ export default function PrivacyPage() {
           </li>
           <li>
             Privacy settings: whether other users can invite you to events,
-            and whether usage logging is on (Section 11.7)
+            and who can (people who follow a club you also follow, or
+            anyone at your school); whether you chose to be shown on events
+            you save (Section 6.1); and whether usage logging is on
+            (Section 11.7)
           </li>
           <li>
             Calendar subscription settings: which sets of events you chose
@@ -334,6 +337,13 @@ export default function PrivacyPage() {
           times, locations, and images. This information describes
           organizations and events, not App users.
         </P>
+        <P>
+          Where a school has it turned on, the App also lists events from
+          a public university calendar, such as the athletics schedule.
+          We read those calendars from our servers. Your device does not
+          contact them, and nothing about you is sent to them, unless you
+          choose to open an event’s page on that site (Section 15).
+        </P>
 
         <Sub>3.8 Information From the Site</Sub>
         <P>
@@ -446,12 +456,29 @@ export default function PrivacyPage() {
         <Sub>6.1 Within the App</Sub>
         <UL>
           <li>
-            Your display name and avatar are visible to other signed-in
-            users at your school. For example, they appear in the list
-            people choose from when inviting someone to an event or sharing
-            a post (unless you turn off event invites; see Section 11.1),
-            on invitations and shared posts you send, and on posts you
-            author.
+            Your display name and avatar can be seen by other signed-in
+            users at your school in the places described here. They appear
+            in the list people choose from when inviting someone to an
+            event or sharing a post, on invitations and shared posts you
+            send, and on posts you author. By default that list shows you
+            only to people who follow at least one club you also follow.
+            You can widen it to anyone at your school, or turn event
+            invites off, which removes you from the list (Section 11.1).
+            School administrators can invite any student who has invites
+            on.
+          </li>
+          <li>
+            <B>Events you save are private by default.</B> Other students
+            cannot see which events you saved. Where a school has the
+            feature turned on, you can choose “Show me on events I save.”
+            If you do, other students at your school who made the same
+            choice can see your name and avatar on an event you both can
+            view (“Sam and Alex saved this”), and you can see theirs.
+            Students who have not turned it on see nothing, and people you
+            blocked or who blocked you are never shown to each other. A
+            save is not a commitment to attend, and the App never shows
+            it as one. You can turn this off at any time, which removes
+            you from every event right away.
           </li>
           <li>
             Posts, captions, and likes are visible to other users with
@@ -719,9 +746,14 @@ export default function PrivacyPage() {
           <li>
             Under Profile &rarr; Privacy &amp; Blocked you may turn off
             event invites, which also removes you from the list people
-            choose from when inviting, and see and undo your blocks. You
-            can block someone from a notification they sent you. A blocked
-            person cannot invite you or share posts with you.
+            choose from when inviting; choose whether invites can come
+            from anyone at your school or only from people who follow a
+            club you also follow; turn “Show me on events I save” on or
+            off where your school offers it (it is off unless you turn it
+            on); and see and undo your blocks. You can block someone from
+            a notification they sent you. A blocked person cannot invite
+            you or share posts with you, and neither of you is shown to
+            the other on saved events.
           </li>
           <li>
             You may delete your account yourself at any time from Profile

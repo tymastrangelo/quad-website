@@ -30,7 +30,7 @@ export default function TermsPage() {
     <LegalPage
       title="onby Terms of Service"
       effective="June 16, 2026"
-      updated="November 18, 2026"
+      updated="November 21, 2026"
     >
       <div className="flex flex-col gap-4">
         <P>
@@ -131,7 +131,10 @@ export default function TermsPage() {
           You can report an event or a post from inside the App, and we
           review reports. You can block another user from a notification
           they sent you; a blocked user cannot invite you to events or
-          share posts with you. You can also report a problem to us at{" "}
+          share posts with you. Invitations are for telling someone about
+          an event they may want. Do not use them to send unwanted,
+          repeated, or bulk messages; we limit how many you can send and
+          may remove the ability from accounts that misuse it. You can also report a problem to us at{" "}
           <Mail />.
         </P>
       </LegalSection>
