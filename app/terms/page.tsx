@@ -61,13 +61,15 @@ export default function TermsPage() {
 
       <LegalSection title="2. Eligibility and Age Requirements">
         <P>
-          The App is intended exclusively for individuals affiliated with
-          Elon University. Account registration requires a valid @elon.edu
-          email address, except for a small number of addresses we approve
-          individually for testing and app store review. When you create an
-          account, you confirm that you are a current student, faculty
-          member, or staff member of Elon University, and that the
-          information you provide is accurate.
+          The App is for people who belong to a college or university
+          that onby supports. Today that is Elon University. Account
+          registration requires an email address issued by a supported
+          school (for Elon University, an @elon.edu address), except for a
+          small number of addresses we approve individually for testing
+          and app store review. When you create an account, you confirm
+          that you are a current student, faculty member, or staff member
+          of that school, and that the information you provide is
+          accurate.
         </P>
         <P>
           The App is for people who have a school email address at a
@@ -121,6 +123,13 @@ export default function TermsPage() {
           </li>
           <li>Violate Elon University policies or any applicable law.</li>
         </UL>
+        <P>
+          <B>No tolerance for objectionable content or abusive users.</B>{" "}
+          onby does not tolerate objectionable content or abusive
+          behavior. We review reports within 24 hours, remove content
+          that breaks these rules, and suspend or remove the account that
+          posted it.
+        </P>
         <P>
           We may remove or restrict content, and suspend or terminate
           accounts, that we believe violate these Terms, our community

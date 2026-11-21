@@ -72,13 +72,14 @@ export default function PrivacyPage() {
 
       <LegalSection title="2. Who This Policy Applies To">
         <P>
-          The App is intended exclusively for individuals affiliated with
-          Elon University. Account registration requires a valid @elon.edu
-          email address. The only exceptions are a small number of
-          addresses we approve individually for testing and app store
-          review. When you create an account, you confirm that you are a
-          current student, faculty member, or staff member of Elon
-          University.
+          The App is for people who belong to a college or university
+          that onby supports. Today that is Elon University. Account
+          registration requires an email address issued by a supported
+          school (for Elon University, an @elon.edu address). The only
+          exceptions are a small number of addresses we approve
+          individually for testing and app store review. When you create
+          an account, you confirm that you are a current student, faculty
+          member, or staff member of that school.
         </P>
         <Callout>
           Age. The App is for people who have a school email address at a
@@ -675,14 +676,17 @@ export default function PrivacyPage() {
             longer linked to you.
           </li>
           <li>
-            Club registration submissions and requests for a school-wide
-            notification that you sent us are kept as records of what was
-            requested, including any contact email you entered.
+            A club registration you sent us that was approved, and
+            requests for a school-wide notification, are kept as records
+            of what was requested, but your account and the contact email
+            you entered are removed from them. Club registrations that
+            were not approved are deleted.
           </li>
           <li>
-            Images you uploaded for a club or a post are not deleted from
-            storage automatically when you delete your account. Contact us
-            at the address in Section 1 if you want one removed.
+            Your profile photo and the images on posts you wrote are
+            deleted with your account. A logo or banner you uploaded for
+            a club belongs to that club’s page and stays. Contact us at
+            the address in Section 1 if you want one removed.
           </li>
           <li>
             A feedback quote you agreed to share that has already been
