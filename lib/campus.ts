@@ -54,7 +54,7 @@ const onby: Campus = {
     },
   ],
   also: [
-    "Say I’m going and see who else is in.",
+    "Save an event and get a reminder before it starts.",
     "Send any event to your calendar.",
     "Invite a friend to an event from inside the app.",
     "Choose which notifications you get, with quiet hours enforced on the server.",
@@ -160,7 +160,7 @@ const elon: Campus = {
     },
   ],
   also: [
-    "Say I’m going and see who else is in.",
+    "Save an event and get a reminder before it starts.",
     "Send any event to your calendar.",
     "Invite a friend to an event from inside the app.",
     "Choose which notifications you get, with quiet hours enforced on the server.",

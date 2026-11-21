@@ -30,7 +30,7 @@ export default function TermsPage() {
     <LegalPage
       title="onby Terms of Service"
       effective="June 16, 2026"
-      updated="August 17, 2026"
+      updated="November 18, 2026"
     >
       <div className="flex flex-col gap-4">
         <P>
@@ -53,8 +53,9 @@ export default function TermsPage() {
           LLC. It is designed to serve the Elon University community but is
           not officially affiliated with, sponsored by, or endorsed by Elon
           University. The App helps students discover campus clubs and
-          events, follow organizations, RSVP to and save events, share
-          posts within club feeds, and receive related notifications.
+          events, follow organizations, save events, invite others to
+          events, see posts from clubs where a school has posts turned on,
+          and receive related notifications.
         </P>
       </LegalSection>
 
@@ -62,15 +63,19 @@ export default function TermsPage() {
         <P>
           The App is intended exclusively for individuals affiliated with
           Elon University. Account registration requires a valid @elon.edu
-          email address. By registering, you represent that you are a
-          current student, faculty member, or staff member of Elon
-          University, and that the information you provide is accurate.
+          email address, except for a small number of addresses we approve
+          individually for testing and app store review. When you create an
+          account, you confirm that you are a current student, faculty
+          member, or staff member of Elon University, and that the
+          information you provide is accurate.
         </P>
         <P>
-          You must be at least 18 years of age, or at least 13 years of age
-          with the consent of a parent or legal guardian, to use the App.
-          The App is not directed to children under 13, and you may not use
-          it if you are under 13. You are responsible for complying with
+          The App is for people who have a school email address at a
+          participating university, which means college students, faculty,
+          and staff. It is not directed to children under 13, and you may
+          not use it if you are under 13. If you are under 18, use the App
+          only with a parent or guardian’s permission. You are responsible
+          for complying with
           all applicable Elon University policies while using the App.
         </P>
       </LegalSection>
@@ -122,6 +127,13 @@ export default function TermsPage() {
           standards, university policy, or the law. Repeated or serious
           violations may result in permanent termination.
         </P>
+        <P>
+          You can report an event or a post from inside the App, and we
+          review reports. You can block another user from a notification
+          they sent you; a blocked user cannot invite you to events or
+          share posts with you. You can also report a problem to us at{" "}
+          <Mail />.
+        </P>
       </LegalSection>
 
       <LegalSection title="5. Your Content">
@@ -154,13 +166,14 @@ export default function TermsPage() {
       <LegalSection title="6. Club Administrators">
         <P>
           Certain users are designated as club administrators with the
-          ability to create and edit events and posts, review join
-          requests, send notifications to club members, and view RSVP lists
-          for their clubs. If you are a club administrator, you agree to
-          use these capabilities responsibly, to keep club and event
-          information accurate, and to respect the privacy of members and
-          attendees. You may not use member information for any purpose
-          other than operating your club within the App.
+          ability to edit their club’s profile, create posts where a school
+          has posts turned on (which notifies the club’s followers), review
+          join requests, and see who follows their clubs. If you are a club
+          administrator, you agree to use these capabilities responsibly,
+          to keep club information accurate, and to respect the privacy of
+          members and followers. You may not use member or follower
+          information for any purpose other than operating your club within
+          the App.
         </P>
       </LegalSection>
 
@@ -172,6 +185,14 @@ export default function TermsPage() {
           any event listed in the App. Event organizers are solely
           responsible for the accuracy of their listings and for complying
           with campus rules and applicable law.
+        </P>
+        <P>
+          Most club and event listings are imported automatically from your
+          school’s own student organization and events system (at Elon
+          University, PhoenixCONNECT). They can be out of date, incomplete,
+          or changed after we imported them. Reminders and alerts in the
+          App are based on those listings. Check the original listing
+          before relying on a time, place, or sign-up requirement.
         </P>
         <P>
           You understand and agree that participating in events promoted
@@ -218,7 +239,7 @@ export default function TermsPage() {
       <LegalSection title="11. Termination and Account Deletion">
         <P>
           You may delete your account yourself at any time, without
-          contacting us, from Settings &rarr; Delete Account inside the App.
+          contacting us, from Profile &rarr; Delete Account inside the App.
           Deletion takes effect immediately and is permanent and
           irreversible, as described in our Privacy Policy. We may suspend or terminate your access at any
           time, with or without notice, for any violation of these Terms,
