@@ -22,7 +22,7 @@ export default function PrivacyPage() {
     <LegalPage
       title="onby Privacy Policy"
       effective="November 18, 2026"
-      updated="November 21, 2026"
+      updated="November 22, 2026"
     >
       <div className="flex flex-col gap-4">
         <P>
@@ -80,6 +80,17 @@ export default function PrivacyPage() {
           individually for testing and app store review. When you create
           an account, you confirm that you are a current student, faculty
           member, or staff member of that school.
+        </P>
+        <P>
+          <B>Browsing without an account.</B> Anyone can open the App and
+          browse “Around Elon,” a set of public events in and around the
+          town of Elon, without creating an account. In that mode we do
+          not ask for your name or email address, we do not record what
+          you look at, and the App does not ask for your location. As with
+          any app or website, our servers and hosting providers receive
+          the technical details of each request, such as your IP address
+          (Section 3.4). Each school’s own listings, saving events,
+          following clubs and reminders require an account.
         </P>
         <Callout>
           Age. The App is for people who have a school email address at a
@@ -339,11 +350,24 @@ export default function PrivacyPage() {
           organizations and events, not App users.
         </P>
         <P>
-          Where a school has it turned on, the App also lists events from
-          a public university calendar, such as the athletics schedule.
-          We read those calendars from our servers. Your device does not
-          contact them, and nothing about you is sent to them, unless you
-          choose to open an event’s page on that site (Section 15).
+          <B>Public calendars (“Around Elon”).</B> The App also lists
+          events that organizations publish on their own public
+          calendars, for example a university’s athletics schedule and
+          cultural calendar, a town’s community calendar, a public
+          library’s programs, and a downtown association’s events.
+          Guests see these without an account, and a school can choose
+          to show them to its students next to its own listings. We read
+          those calendars from our servers and keep each event’s title,
+          time, place, a short description and a link back to the
+          source. We do not keep staff names or contact details that
+          appear in those calendars. Your device does not contact those
+          sites, and nothing about you is sent to them, unless you choose
+          to open an event’s page there (Section 15). Some of these
+          events carry a “21+” note; that is our reading of the public
+          listing, not the venue’s stated policy. onby is not affiliated
+          with the organizations whose public events are listed. An
+          organization that wants its listings changed or removed can
+          write to us at the address in Section 1.
         </P>
 
         <Sub>3.8 Information From the Site</Sub>

@@ -30,7 +30,7 @@ export default function TermsPage() {
     <LegalPage
       title="onby Terms of Service"
       effective="June 16, 2026"
-      updated="November 21, 2026"
+      updated="November 22, 2026"
     >
       <div className="flex flex-col gap-4">
         <P>
@@ -55,7 +55,12 @@ export default function TermsPage() {
           University. The App helps students discover campus clubs and
           events, follow organizations, save events, invite others to
           events, see posts from clubs where a school has posts turned on,
-          and receive related notifications.
+          and receive related notifications. Anyone can also browse
+          “Around Elon,” a set of public events from organizations’ public
+          calendars, without an account. Those listings come from third
+          parties: times and details can change, an event may carry an
+          age restriction we do not know about, and you should check the
+          source before you go.
         </P>
       </LegalSection>
 
