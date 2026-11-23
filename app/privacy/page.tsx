@@ -21,7 +21,7 @@ export default function PrivacyPage() {
   return (
     <LegalPage
       title="onby Privacy Policy"
-      effective="November 18, 2026"
+      effective="November 22, 2026"
       updated="November 22, 2026"
     >
       <div className="flex flex-col gap-4">
@@ -268,14 +268,19 @@ export default function PrivacyPage() {
             usage records (Section 3.3) there briefly until they are sent.
           </li>
           <li>
-            <B>Crash and error data (if enabled).</B> The App contains
-            optional crash reporting (Sentry) that runs only in a release
-            where we have configured it. If it is active in the deployed
-            version of the App,
-            crash logs, exception data, device and OS diagnostic
-            context, and Sentry session data may be collected. Performance
-            tracing is disabled. We will update this Policy if Sentry is
-            activated or deactivated in production.
+            <B>Crash and error data.</B> The App uses Sentry to report
+            crashes and errors so we can fix them. A report contains the
+            error and where in the App it happened, your device model and
+            operating system version, the App version, memory and battery
+            state, the screens and requests that led up to the error
+            (without what you typed and without names or email addresses),
+            your campus, and your account ID. Sentry also estimates a city
+            from the network address a report arrives from; we have set
+            Sentry not to store that address. Reports never include your
+            device’s location, and they are not used for advertising or to
+            track you. Performance tracing and session replay are off.
+            Turning off “Help improve onby” under Profile, then Privacy, also turns off
+            crash reporting on your device.
           </li>
         </UL>
 
@@ -568,10 +573,18 @@ export default function PrivacyPage() {
             any attachments.
           </li>
           <li>
-            <B>Sentry (sentry.io) (if enabled in production):</B> crash and
-            error reporting. Data processed: crash and exception data,
-            device and OS diagnostic context, and session data. Performance
-            tracing is disabled.
+            <B>Sentry (sentry.io):</B> crash and error reporting. Data
+            processed: crash and error details, device and operating
+            system information, App version, your campus, your account
+            ID, and a city estimated from the network address. Performance
+            tracing and session replay are off.
+          </li>
+          <li>
+            <B>National Weather Service (weather.gov):</B> the campus
+            weather shown on the Home screen. Our server asks for the
+            forecast at your campus’s location once an hour. Nothing about
+            you or your device is sent, and your device’s location is
+            never used for it.
           </li>
           <li>
             <B>Apple App Store and Google Play Store:</B> app distribution.
@@ -733,7 +746,7 @@ export default function PrivacyPage() {
             support messages you sent us; and
           </li>
           <li>
-            Sentry (if enabled), which may retain error and crash records
+            Sentry, which may retain error and crash records
             according to Sentry’s retention policies.
           </li>
         </UL>
