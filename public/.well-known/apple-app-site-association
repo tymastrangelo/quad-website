@@ -6,5 +6,8 @@
         "components": [{ "/": "/open", "comment": "links shared from the app" }]
       }
     ]
+  },
+  "webcredentials": {
+    "apps": ["87YV5NT73F.com.joinonby.app", "87YV5NT73F.com.joinonby.app.dev"]
   }
 }
